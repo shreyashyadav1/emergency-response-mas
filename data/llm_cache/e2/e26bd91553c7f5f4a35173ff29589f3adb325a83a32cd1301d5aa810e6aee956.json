@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 64. A 911 call reports a structural collapse (INC-11).\nThe caller's words: \"A floor gave way in a warehouse on Smith Boulevard. About 6 people are hurt. No one seems critical yet. Debris is still coming down.\"\nThe caller's counts: 6 hurt, 0 critical, hazard structural, someone trapped: no. Caller reliability 0.69 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "structural_collapse",
+   "victims_per_reported": 1.098,
+   "red_per_critical": 0.955,
+   "red_per_other": 0.088,
+   "yellow_of_rest": 0.462,
+   "trapped_rate": 0.86
+  },
+  "statistical_estimate": {
+   "red": 0.53,
+   "yellow": 2.8,
+   "green": 3.26,
+   "hazard": "structural",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":0.53,\"yellow\":2.8,\"green\":3.26,\"hazard\":\"structural\",\"trapped\":true,\"reason\":\"Caller under-counted victims and misjudged critical status.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1021,
+  "output_tokens": 87
+ }
+}

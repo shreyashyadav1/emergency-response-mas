@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 88. A 911 call reports a building fire (INC-12).\nThe caller's words: \"Caller sees flames and heavy smoke from a restaurant on Holder Way. Caller thinks maybe 4 people are hurt but cannot be sure. 2 look badly hurt. Flames and smoke are visible.\"\nThe caller's counts: 4 hurt, 2 critical, hazard fire, someone trapped: no. Caller reliability 0.32 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 2.03,
+   "yellow": 0.9,
+   "green": 1.48,
+   "hazard": "fire",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":2.03,\"yellow\":0.9,\"green\":1.48,\"hazard\":\"fire\",\"trapped\":false,\"reason\":\"Caller underestimated the number of victims.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1032,
+  "output_tokens": 81
+ }
+}

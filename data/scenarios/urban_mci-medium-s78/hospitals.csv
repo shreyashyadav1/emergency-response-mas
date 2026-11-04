@@ -1,0 +1,4 @@
+hospital_id,name,x,y,zone,trauma_level,capabilities,er_bays_total,er_bays_occupied,surge_bays,icu_beds_total,icu_beds_free,ward_beds_free,reserve_bays_for_red,diversion_threshold,max_staff_lend_doctors,max_staff_lend_nurses,er_bays_free,beds_available
+H1,Harborview Trauma Center,11.493,10.237,core,1,general_emergency|trauma_surgery|neurosurgery|burn_unit|cardiac_cath|toxicology_decon|critical_care,14,7,5,12,3,18,2,0.9,1,2,7,21
+H2,Eastgate Regional Medical Center,19.231,16.155,inner,2,general_emergency|trauma_surgery|cardiac_cath|pediatric_emergency|toxicology_decon|critical_care,10,6,3,8,3,11,1,0.85,1,3,4,14
+H3,Northfield Community Hospital,23.5,7.719,outer,3,general_emergency|critical_care,6,4,2,3,1,7,0,0.8,1,2,2,8

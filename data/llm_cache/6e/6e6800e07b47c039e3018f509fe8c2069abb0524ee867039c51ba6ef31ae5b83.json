@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 56. A 911 call reports a multi vehicle accident (INC-09).\nThe caller's words: \"Chain-reaction collision on Harding Boulevard, caller is standing nearby. About 6 people are hurt. No one seems critical yet. Flames and smoke are visible.\"\nThe caller's counts: 6 hurt, 0 critical, hazard fire, someone trapped: no. Caller reliability 0.58 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 0.45,
+   "yellow": 1.97,
+   "green": 4.21,
+   "hazard": "fire",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 1, \"yellow\": 2, \"green\": 3, \"hazard\": \"fire\", \"trapped\": false, \"reason\": \"Base rates suggest a multi-vehicle accident with 6 reported injuries involves critical patients and visible fire.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1124,
+  "output_tokens": 75
+ }
+}

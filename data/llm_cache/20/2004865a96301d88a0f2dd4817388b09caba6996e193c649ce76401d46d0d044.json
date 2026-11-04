@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 16. A 911 call reports a hazmat release (INC-04).\nThe caller's words: \"A storage tank is leaking on Smith Street and people are coughing. Caller thinks maybe 5 people are hurt but cannot be sure. 1 looks badly hurt. There is a strong chemical smell.\"\nThe caller's counts: 5 hurt, 1 critical, hazard hazmat, someone trapped: no. Caller reliability 0.34 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "hazmat_release",
+   "victims_per_reported": 1.096,
+   "red_per_critical": 0.901,
+   "red_per_other": 0.061,
+   "yellow_of_rest": 0.33,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 1.15,
+   "yellow": 1.43,
+   "green": 2.9,
+   "hazard": "hazmat",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 1, \"yellow\": 1, \"green\": 3, \"hazard\": \"hazmat\", \"trapped\": false, \"reason\": \"Based on statistical estimates for hazmat releases and caller report of chemical exposure.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1136,
+  "output_tokens": 71
+ }
+}

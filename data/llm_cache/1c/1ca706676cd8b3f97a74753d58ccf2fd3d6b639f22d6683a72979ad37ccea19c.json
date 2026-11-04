@@ -1,0 +1,38 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 137. Ambulance A3 (ALS) is taking patients from INC-02: RED needing toxicology decon, YELLOW needing general emergency.\nHospitals that can treat everyone on board: H1, H2. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 31,
+    "bays_free_now": 1,
+    "bays_expected_free_at_arrival": 1,
+    "patients_already_heading_there": 3,
+    "ambulances_waiting_at_door": 1,
+    "occupancy": 0.95,
+    "bays_held_for_red": 2
+   },
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 38,
+    "bays_free_now": 2,
+    "bays_expected_free_at_arrival": 3,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.8,
+    "bays_held_for_red": 1
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\": [\"H2\", \"H1\"], \"reason\": \"H1 is near but congested with waiting ambulances and incoming patients, whereas H2 has open capacity and expected bays.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 843,
+  "output_tokens": 51
+ }
+}

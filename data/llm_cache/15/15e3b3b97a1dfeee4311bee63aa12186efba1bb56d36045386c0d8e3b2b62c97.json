@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 22. A 911 call reports a structural collapse (INC-06).\nThe caller's words: \"Caller heard a loud bang and a parking garage on Jenkins Avenue came down. About 6 people are hurt. No one seems critical yet. Debris is still coming down.\"\nThe caller's counts: 6 hurt, 0 critical, hazard structural, someone trapped: no. Caller reliability 0.54 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "structural_collapse",
+   "victims_per_reported": 1.098,
+   "red_per_critical": 0.955,
+   "red_per_other": 0.088,
+   "yellow_of_rest": 0.462,
+   "trapped_rate": 0.86
+  },
+  "statistical_estimate": {
+   "red": 0.53,
+   "yellow": 2.8,
+   "green": 3.26,
+   "hazard": "structural",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":0.53,\"yellow\":2.8,\"green\":3.26,\"hazard\":\"structural\",\"trapped\":true,\"reason\":\"Caller under-counted victims and misjudged criticality.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1029,
+  "output_tokens": 87
+ }
+}

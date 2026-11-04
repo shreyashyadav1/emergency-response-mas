@@ -1,0 +1,79 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 63. Contested units: several incidents want the same team this minute (R1). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R1",
+    "unit_type": "fire engine",
+    "bids": [
+     {
+      "incident": "INC-03",
+      "needs": "triage stabilization",
+      "value": 0.2455,
+      "priority": 18.6,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "triage stabilization",
+      "value": 0.1714,
+      "priority": 1.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "triage stabilization",
+      "value": 0.2505,
+      "priority": 5.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-06",
+      "needs": "triage stabilization",
+      "value": 0.4306,
+      "priority": 33.2,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-07",
+      "needs": "triage stabilization",
+      "value": 0.3414,
+      "priority": 10.6,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "triage stabilization",
+      "value": 0.3266,
+      "priority": 7.9,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-12",
+      "needs": "triage stabilization",
+      "value": 0.2055,
+      "priority": 5.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-06"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"R1\",\"incident\":\"INC-06\"}],\"reason\":\"INC-06 has the highest value for expected survivors.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1217,
+  "output_tokens": 43
+ }
+}

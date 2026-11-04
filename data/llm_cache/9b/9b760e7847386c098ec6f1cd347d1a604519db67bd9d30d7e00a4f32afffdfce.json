@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 35. A 911 call reports a building fire (INC-10).\nThe caller's words: \"Fire alarm and visible fire at a school annex on Hicks Boulevard. About 2 people are hurt. No one seems critical yet. Someone is trapped. Flames and smoke are visible.\"\nThe caller's counts: 2 hurt, 0 critical, hazard fire, someone trapped: yes. Caller reliability 0.76 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 0.15,
+   "yellow": 0.78,
+   "green": 1.29,
+   "hazard": "fire",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":0.15,\"yellow\":0.78,\"green\":1.29,\"hazard\":\"fire\",\"trapped\":true,\"reason\":\"Caller reported someone trapped and visible flames.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1028,
+  "output_tokens": 82
+ }
+}

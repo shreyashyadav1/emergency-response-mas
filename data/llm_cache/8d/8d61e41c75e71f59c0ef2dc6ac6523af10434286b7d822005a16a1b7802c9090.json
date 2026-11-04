@@ -1,0 +1,49 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 83. Ambulance A4 (BLS) is taking patients from INC-08: YELLOW needing general emergency, YELLOW needing general emergency.\nHospitals that can treat everyone on board: H2, H1, H3. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 20,
+    "bays_free_now": 4,
+    "bays_expected_free_at_arrival": 2,
+    "patients_already_heading_there": 2,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.6,
+    "bays_held_for_red": 1
+   },
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 22,
+    "bays_free_now": 3,
+    "bays_expected_free_at_arrival": 4,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.79,
+    "bays_held_for_red": 2
+   },
+   {
+    "hospital": "H3",
+    "name": "Northfield Community Hospital",
+    "minutes_to_arrive": 40,
+    "bays_free_now": 3,
+    "bays_expected_free_at_arrival": 3,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.5,
+    "bays_held_for_red": 0
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\": [\"H1\", \"H2\", \"H3\"], \"reason\": \"H1 is closest among hospitals expected to have free bays upon arrival.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 949,
+  "output_tokens": 46
+ }
+}

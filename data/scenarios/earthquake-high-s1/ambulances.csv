@@ -1,0 +1,6 @@
+ambulance_id,unit_type,base_station_id,x,y,capacity,status,available_from_min,crew_size,speed_kmh
+A1,ALS,S1,12.062,11.859,1,available,0,3,55.0
+A2,BLS,S2,1.634,1.118,2,available,0,3,55.0
+A3,ALS,S3,21.772,22.778,2,available,0,2,55.0
+A4,BLS,S4,21.692,1.569,2,available,0,2,55.0
+A5,ALS,S1,9.924,12.999,1,busy,9,3,55.0

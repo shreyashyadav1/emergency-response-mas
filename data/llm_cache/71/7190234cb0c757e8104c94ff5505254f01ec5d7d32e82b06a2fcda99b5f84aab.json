@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 64. A 911 call reports a building fire (INC-09).\nThe caller's words: \"Caller sees flames and heavy smoke from a apartment block on Blankenship Avenue. About 3 people are hurt. 1 looks badly hurt. Flames and smoke are visible.\"\nThe caller's counts: 3 hurt, 1 critical, hazard fire, someone trapped: no. Caller reliability 0.70 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 1.09,
+   "yellow": 0.84,
+   "green": 1.39,
+   "hazard": "fire",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":1.03,\"yellow\":0.63,\"green\":1.39,\"hazard\":\"fire\",\"trapped\":false,\"reason\":\"Caller reported flames and smoke, indicating a serious situation.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1026,
+  "output_tokens": 85
+ }
+}

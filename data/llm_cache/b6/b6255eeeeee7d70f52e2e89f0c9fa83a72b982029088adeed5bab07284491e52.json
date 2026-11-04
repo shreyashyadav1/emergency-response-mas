@@ -1,0 +1,38 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 80. Ambulance A1 (ALS) is taking patients from INC-06: RED needing cardiac cath, YELLOW needing general emergency.\nHospitals that can treat everyone on board: H2, H1. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 13,
+    "bays_free_now": 1,
+    "bays_expected_free_at_arrival": 2,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.9,
+    "bays_held_for_red": 1
+   },
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 30,
+    "bays_free_now": 4,
+    "bays_expected_free_at_arrival": 5,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.71,
+    "bays_held_for_red": 2
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\":[\"H2\",\"H1\"],\"reason\":\"H2 has a bay free now and is closer.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 796,
+  "output_tokens": 37
+ }
+}

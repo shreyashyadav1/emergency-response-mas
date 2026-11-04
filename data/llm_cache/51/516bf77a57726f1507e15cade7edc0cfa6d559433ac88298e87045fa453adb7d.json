@@ -1,0 +1,30 @@
+{
+ "kind": "counter",
+ "agent": "Hospital Coordination Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 149. Dispatch asks H3 to admit 2 patient(s) (YELLOW, YELLOW) arriving in 27 min. You cannot simply accept: a bay is free but no nurse for any. Decide whether to make the counter-offer or refuse.",
+ "data": {
+  "capacity_at_arrival": {
+   "hospital": "H3",
+   "minutes_until_arrival": 27,
+   "bays_expected_free_at_arrival": 4,
+   "bays_held_for_red": 0,
+   "patients_already_on_their_way": 0,
+   "red_patients_already_on_their_way": 0,
+   "on_this_ambulance": [
+    "YELLOW needing general emergency",
+    "YELLOW needing general emergency"
+   ],
+   "why_not_a_plain_yes": "a bay is free but no nurse for any",
+   "counter_offer_on_the_table": "yes if a nurse who can handle any is lent to us",
+   "occupancy": 0.5,
+   "ambulances_waiting_at_door": 0
+  }
+ },
+ "output_text": "{\"decision\": \"counter\", \"reason\": \"yes if a nurse who can handle any is lent to us\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 878,
+  "output_tokens": 36
+ }
+}

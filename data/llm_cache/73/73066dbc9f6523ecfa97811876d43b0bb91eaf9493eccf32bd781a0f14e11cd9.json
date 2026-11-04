@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 11. A 911 call reports a multi vehicle accident (INC-05).\nThe caller's words: \"Caller reports a crash involving several vehicles on Steele Boulevard. About 5 people are hurt. 1 looks badly hurt.\"\nThe caller's counts: 5 hurt, 1 critical, hazard none, someone trapped: no. Caller reliability 0.52 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 1.16,
+   "yellow": 1.4,
+   "green": 2.98,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":1.16,\"yellow\":1.4,\"green\":2.98,\"hazard\":\"none\",\"trapped\":false,\"reason\":\"Caller under-counted victims and misjudged criticality.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1008,
+  "output_tokens": 86
+ }
+}

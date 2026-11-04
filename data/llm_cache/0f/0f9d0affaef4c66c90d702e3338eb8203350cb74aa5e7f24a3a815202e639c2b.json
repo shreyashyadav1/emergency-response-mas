@@ -1,0 +1,103 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 105. Contested units: several incidents want the same ambulance this minute (A5). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "A5",
+    "unit_type": "ALS",
+    "bids": [
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 0.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 0.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 0.3,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-07",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 0.3,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "ambulance",
+      "value": 0.0043,
+      "priority": 46.7,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "ambulance",
+      "value": 0.0043,
+      "priority": 46.7,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-11",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 1.9,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-11",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 1.9,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-12",
+      "needs": "ambulance",
+      "value": 0.01,
+      "priority": 18.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-12",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 18.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-12"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"A5\",\"incident\":\"INC-12\"}],\"reason\":\"INC-12 has the highest value for saving lives.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1352,
+  "output_tokens": 43
+ }
+}

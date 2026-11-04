@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 21. A 911 call reports a crowd incident (INC-07).\nThe caller's words: \"Several people collapsed in a crowded area on Ramirez Avenue. About 6 people are hurt. 1 looks badly hurt.\"\nThe caller's counts: 6 hurt, 1 critical, hazard none, someone trapped: no. Caller reliability 0.68 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "crowd_incident",
+   "victims_per_reported": 1.107,
+   "red_per_critical": 0.865,
+   "red_per_other": 0.039,
+   "yellow_of_rest": 0.395,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 1.06,
+   "yellow": 2.21,
+   "green": 3.37,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":1.06,\"yellow\":2.21,\"green\":3.37,\"hazard\":\"none\",\"trapped\":false,\"reason\":\"Caller under-counted victims and misjudged critical condition.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1006,
+  "output_tokens": 86
+ }
+}

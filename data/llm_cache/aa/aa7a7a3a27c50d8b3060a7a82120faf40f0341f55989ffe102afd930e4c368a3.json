@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 20. A 911 call reports a multi vehicle accident (INC-05).\nThe caller's words: \"Chain-reaction collision on Adams Avenue, caller is standing nearby. Caller thinks maybe 2 people are hurt but cannot be sure. 1 looks badly hurt.\"\nThe caller's counts: 2 hurt, 1 critical, hazard unknown, someone trapped: no. Caller reliability 0.40 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 0.93,
+   "yellow": 0.41,
+   "green": 0.87,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 1.0, \"yellow\": 0.41, \"green\": 0.87, \"hazard\": \"none\", \"trapped\": false, \"reason\": \"Statistical estimate adjusted for one badly hurt victim reported by caller.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1124,
+  "output_tokens": 75
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 24. A 911 call reports a structural collapse (INC-06).\nThe caller's words: \"Part of a school annex on Moore Street has collapsed. Caller thinks maybe 4 people are hurt but cannot be sure. 4 look badly hurt. Someone is trapped. Debris is still coming down.\"\nThe caller's counts: 4 hurt, 4 critical, hazard structural, someone trapped: yes. Caller reliability 0.35 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "structural_collapse",
+   "victims_per_reported": 1.098,
+   "red_per_critical": 0.955,
+   "red_per_other": 0.088,
+   "yellow_of_rest": 0.462,
+   "trapped_rate": 0.86
+  },
+  "statistical_estimate": {
+   "red": 3.82,
+   "yellow": 0.26,
+   "green": 0.31,
+   "hazard": "structural",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":3.82,\"yellow\":0.26,\"green\":0.31,\"hazard\":\"structural\",\"trapped\":true,\"reason\":\"Caller reported someone trapped and multiple injuries.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1041,
+  "output_tokens": 83
+ }
+}

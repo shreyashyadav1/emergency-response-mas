@@ -1,0 +1,38 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 74. Ambulance A5 (ALS) is taking patients from INC-07: RED needing trauma surgery, YELLOW needing general emergency.\nHospitals that can treat everyone on board: H2, H1. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 18,
+    "bays_free_now": 3,
+    "bays_expected_free_at_arrival": 1,
+    "patients_already_heading_there": 2,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.7,
+    "bays_held_for_red": 1
+   },
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 29,
+    "bays_free_now": 3,
+    "bays_expected_free_at_arrival": 4,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.79,
+    "bays_held_for_red": 2
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\":[\"H2\",\"H1\"],\"reason\":\"H2 has bays free now and is closer.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 796,
+  "output_tokens": 36
+ }
+}

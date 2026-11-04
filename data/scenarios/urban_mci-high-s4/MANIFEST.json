@@ -1,0 +1,155 @@
+{
+  "checks": {
+    "als_unit_ready_early": true,
+    "arrivals_ordered": true,
+    "capacity_limits": true,
+    "every_need_has_a_provider": true,
+    "every_scene_need_has_a_team": true,
+    "foreign_keys": true,
+    "incident_counts_match_victims": true,
+    "inside_city": true,
+    "schema_roundtrip": true,
+    "unique_ids": true
+  },
+  "contention": {
+    "ambulance_pairs": [
+      [
+        "INC-01",
+        "INC-03"
+      ],
+      [
+        "INC-04",
+        "INC-05"
+      ],
+      [
+        "INC-04",
+        "INC-06"
+      ],
+      [
+        "INC-04",
+        "INC-07"
+      ],
+      [
+        "INC-04",
+        "INC-08"
+      ],
+      [
+        "INC-05",
+        "INC-06"
+      ],
+      [
+        "INC-05",
+        "INC-07"
+      ],
+      [
+        "INC-05",
+        "INC-08"
+      ],
+      [
+        "INC-06",
+        "INC-07"
+      ],
+      [
+        "INC-06",
+        "INC-08"
+      ],
+      [
+        "INC-07",
+        "INC-08"
+      ],
+      [
+        "INC-09",
+        "INC-11"
+      ],
+      [
+        "INC-09",
+        "INC-12"
+      ],
+      [
+        "INC-11",
+        "INC-12"
+      ]
+    ],
+    "capability_demand": {
+      "burn_unit": 1,
+      "critical_care": 1,
+      "neurosurgery": 3,
+      "toxicology_decon": 5,
+      "trauma_surgery": 5
+    },
+    "n_ambulance_pairs": 14,
+    "nearest_capable_load": {
+      "H1": {
+        "free_er_bays": 4,
+        "red_yellow_nearest_capable": 17
+      },
+      "H2": {
+        "free_er_bays": 3,
+        "red_yellow_nearest_capable": 5
+      },
+      "H3": {
+        "free_er_bays": 2,
+        "red_yellow_nearest_capable": 1
+      }
+    },
+    "red_yellow_needing_single_provider": 4,
+    "single_provider": {
+      "burn_unit": {
+        "hospital": "H1",
+        "victims": 1
+      },
+      "neurosurgery": {
+        "hospital": "H1",
+        "victims": 3
+      }
+    }
+  },
+  "counts": {
+    "ambulances": 5,
+    "doctors": 22,
+    "green": 37,
+    "hospitals": 3,
+    "incidents": 12,
+    "needs_icu": 6,
+    "nurses": 32,
+    "red": 8,
+    "responder_teams": 6,
+    "stations": 4,
+    "trapped": 3,
+    "victims": 60,
+    "yellow": 15
+  },
+  "files": {
+    "ambulances.csv": "4436014dfe3a8e8058c00d25df12f6a0c1088771dbbfee48729dcb28caa1ec51",
+    "hospitals.csv": "cc931010f68c7246cb27123fcd79d38b29ad30c5fd3e220c9755528ad35b081b",
+    "incidents.csv": "eb6a09e2fd87919c5f2d9b798b64a6ce156ea652ccb0e89065cb162ef32f026a",
+    "responders.csv": "754ad819019effd18f4c748f6529f946ff0e10ccdbfbec6552f8868524f0b7cd",
+    "scenario.json": "964112bd09e12f9a5a28aa431759b3d2dfe063f0974edd55a37957fbf7aa8b29",
+    "staff.csv": "94fce89674d343363b15a8f213d455d930581534484168e3b5f80ce36caea1aa",
+    "stations.csv": "8c898b91bf507da3f8a3c353d5accffa7b9fdfc85ddc40503071fe489aabd1f7",
+    "travel_times.csv": "709a37497544a6686be3ef41a8d475000c0ae339a5bc426dd911dd7f791762b2",
+    "victims.csv": "05209a2e0304da38183ee5b8e01a7297adbca2acc322b76d049b7550344910fb"
+  },
+  "generator_version": "0.2.0",
+  "libraries": {
+    "faker": "40.43.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pydantic": "2.14.1",
+    "python": "3.13.14"
+  },
+  "pressure": {
+    "ambulance_pressure": 1.603,
+    "doctor_pressure": 0.38,
+    "er_bay_pressure": 1.418,
+    "mean_ambulance_cycle_min": 53.0,
+    "nurse_pressure": 0.617,
+    "red_per_als_unit": 2.667,
+    "specialist_pressure": 1.471
+  },
+  "scenario_id": "urban_mci-high-s4",
+  "scenario_sha256": "964112bd09e12f9a5a28aa431759b3d2dfe063f0974edd55a37957fbf7aa8b29",
+  "seed": 4,
+  "stress": "high",
+  "theme": "urban_mci"
+}

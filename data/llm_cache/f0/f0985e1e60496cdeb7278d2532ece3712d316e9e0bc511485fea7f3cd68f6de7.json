@@ -1,0 +1,30 @@
+{
+ "kind": "settlement",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 80. Admission settlement: ambulance A4 carries YELLOW, YELLOW, and hospitals answered with counter-offers. Pick how to settle it.",
+ "data": {
+  "settlement_options": [
+   {
+    "option": 0,
+    "hospital": "H2",
+    "deal": "has room later",
+    "care_starts_in_min": 20,
+    "detail": "H2 has room in 20 min (ETA 18)"
+   },
+   {
+    "option": 1,
+    "hospital": "H1",
+    "deal": "has room later",
+    "care_starts_in_min": 42,
+    "detail": "H1 has room in 42 min (ETA 35)"
+   }
+  ]
+ },
+ "output_text": "{\"option\":0,\"reason\":\"H2 starts care sooner in 20 minutes.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 950,
+  "output_tokens": 30
+ }
+}

@@ -1,0 +1,194 @@
+{
+  "checks": {
+    "als_unit_ready_early": true,
+    "arrivals_ordered": true,
+    "capacity_limits": true,
+    "every_need_has_a_provider": true,
+    "every_scene_need_has_a_team": true,
+    "foreign_keys": true,
+    "incident_counts_match_victims": true,
+    "inside_city": true,
+    "schema_roundtrip": true,
+    "unique_ids": true
+  },
+  "contention": {
+    "ambulance_pairs": [
+      [
+        "INC-01",
+        "INC-03"
+      ],
+      [
+        "INC-01",
+        "INC-04"
+      ],
+      [
+        "INC-01",
+        "INC-05"
+      ],
+      [
+        "INC-01",
+        "INC-06"
+      ],
+      [
+        "INC-01",
+        "INC-07"
+      ],
+      [
+        "INC-01",
+        "INC-08"
+      ],
+      [
+        "INC-03",
+        "INC-04"
+      ],
+      [
+        "INC-03",
+        "INC-05"
+      ],
+      [
+        "INC-03",
+        "INC-06"
+      ],
+      [
+        "INC-03",
+        "INC-07"
+      ],
+      [
+        "INC-03",
+        "INC-08"
+      ],
+      [
+        "INC-04",
+        "INC-05"
+      ],
+      [
+        "INC-04",
+        "INC-06"
+      ],
+      [
+        "INC-04",
+        "INC-07"
+      ],
+      [
+        "INC-04",
+        "INC-08"
+      ],
+      [
+        "INC-05",
+        "INC-06"
+      ],
+      [
+        "INC-05",
+        "INC-07"
+      ],
+      [
+        "INC-05",
+        "INC-08"
+      ],
+      [
+        "INC-06",
+        "INC-07"
+      ],
+      [
+        "INC-06",
+        "INC-08"
+      ],
+      [
+        "INC-07",
+        "INC-08"
+      ],
+      [
+        "INC-07",
+        "INC-09"
+      ],
+      [
+        "INC-08",
+        "INC-09"
+      ],
+      [
+        "INC-08",
+        "INC-10"
+      ],
+      [
+        "INC-09",
+        "INC-10"
+      ]
+    ],
+    "capability_demand": {
+      "critical_care": 1,
+      "neurosurgery": 3,
+      "toxicology_decon": 4,
+      "trauma_surgery": 6
+    },
+    "n_ambulance_pairs": 25,
+    "nearest_capable_load": {
+      "H1": {
+        "free_er_bays": 4,
+        "red_yellow_nearest_capable": 17
+      },
+      "H2": {
+        "free_er_bays": 3,
+        "red_yellow_nearest_capable": 4
+      },
+      "H3": {
+        "free_er_bays": 1,
+        "red_yellow_nearest_capable": 0
+      }
+    },
+    "red_yellow_needing_single_provider": 3,
+    "single_provider": {
+      "neurosurgery": {
+        "hospital": "H1",
+        "victims": 3
+      }
+    }
+  },
+  "counts": {
+    "ambulances": 5,
+    "doctors": 22,
+    "green": 24,
+    "hospitals": 3,
+    "incidents": 10,
+    "needs_icu": 11,
+    "nurses": 32,
+    "red": 11,
+    "responder_teams": 6,
+    "stations": 4,
+    "trapped": 6,
+    "victims": 45,
+    "yellow": 10
+  },
+  "files": {
+    "ambulances.csv": "784f2d880f0b5cab78d7551a97cc7df5cc1fdf21bfabc3bd0d44c729dda57ea0",
+    "hospitals.csv": "7a6b0030c739d114d474af9d0b2af0fc27938f480d53ecf827fc47e43c7b60ae",
+    "incidents.csv": "23b2daa8d34d4721c90789c62a228d00638bd1a1f1fd0146ce065b7a76068101",
+    "responders.csv": "19991c2a7a2767b584d1442443323effabb0fe1862c985fae541d14ae351a937",
+    "scenario.json": "dce302454c5e8f0729f292e1608de27b82271df9d5d8ff5eae80e412f78b3b6c",
+    "staff.csv": "aed3ef960519b41df8f3054b962ab431080adebd01e2d3a80494269b543d63db",
+    "stations.csv": "f82cd11fb4cf271488f0a75b05d6a391d1228746f0f070a4879e20648474eb32",
+    "travel_times.csv": "cfd8fab851fd2fc6bd2ada299c740b0e1fc71c6241ff8e2a7e07a49f6368d36a",
+    "victims.csv": "fbeb65240f7479f694308a6e014d1e9cc387a5caf4e63f2ac1b812e224736761"
+  },
+  "generator_version": "0.2.0",
+  "libraries": {
+    "faker": "40.43.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pydantic": "2.14.1",
+    "python": "3.13.14"
+  },
+  "pressure": {
+    "ambulance_pressure": 1.11,
+    "doctor_pressure": 0.44,
+    "er_bay_pressure": 1.446,
+    "mean_ambulance_cycle_min": 44.6,
+    "nurse_pressure": 0.859,
+    "red_per_als_unit": 3.667,
+    "specialist_pressure": 1.579
+  },
+  "scenario_id": "highway_pileup-high-s1",
+  "scenario_sha256": "dce302454c5e8f0729f292e1608de27b82271df9d5d8ff5eae80e412f78b3b6c",
+  "seed": 1,
+  "stress": "high",
+  "theme": "highway_pileup"
+}

@@ -1,0 +1,38 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 140. Ambulance A4 (BLS) is taking patients from INC-08: YELLOW needing trauma surgery.\nHospitals that can treat everyone on board: H1, H2. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 28,
+    "bays_free_now": 2,
+    "bays_expected_free_at_arrival": 3,
+    "patients_already_heading_there": 4,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.63,
+    "bays_held_for_red": 2
+   },
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 29,
+    "bays_free_now": 3,
+    "bays_expected_free_at_arrival": 5,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.77,
+    "bays_held_for_red": 1
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\":[\"H1\",\"H2\"],\"reason\":\"H1 has bays free now and expected free at arrival despite having patients heading there.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 788,
+  "output_tokens": 43
+ }
+}

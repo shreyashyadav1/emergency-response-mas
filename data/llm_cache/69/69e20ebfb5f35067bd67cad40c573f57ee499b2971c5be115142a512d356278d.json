@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 10. A 911 call reports a structural collapse (INC-02).\nThe caller's words: \"Part of a restaurant on Johnson Lane has collapsed. About 6 people are hurt. 1 looks badly hurt. Someone is trapped. Debris is still coming down.\"\nThe caller's counts: 6 hurt, 1 critical, hazard structural, someone trapped: yes. Caller reliability 0.79 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "structural_collapse",
+   "victims_per_reported": 1.098,
+   "red_per_critical": 0.955,
+   "red_per_other": 0.088,
+   "yellow_of_rest": 0.462,
+   "trapped_rate": 0.86
+  },
+  "statistical_estimate": {
+   "red": 1.39,
+   "yellow": 2.4,
+   "green": 2.79,
+   "hazard": "structural",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":1.39,\"yellow\":2.4,\"green\":2.79,\"hazard\":\"structural\",\"trapped\":true,\"reason\":\"Caller reported someone trapped and debris still coming down.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1027,
+  "output_tokens": 85
+ }
+}

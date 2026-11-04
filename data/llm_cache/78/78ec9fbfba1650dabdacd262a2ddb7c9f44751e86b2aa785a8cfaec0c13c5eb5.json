@@ -1,0 +1,79 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 51. Contested units: several incidents want the same ambulance this minute (A5). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "A5",
+    "unit_type": "ALS",
+    "bids": [
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0037,
+      "priority": 37.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0037,
+      "priority": 37.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "ambulance",
+      "value": 0.0052,
+      "priority": 15.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-06",
+      "needs": "ambulance",
+      "value": 0.0053,
+      "priority": 15.0,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-07",
+      "needs": "ambulance",
+      "value": 0.0008,
+      "priority": 3.6,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "ambulance",
+      "value": 0.0058,
+      "priority": 18.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 18.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-08"
+   }
+  ]
+ },
+ "output_text": "{\"awards\": [{\"unit\": \"A5\", \"incident\": \"INC-08\"}], \"reason\": \"Awarding unit A5 to INC-08 maximizes the summed expected survival value.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1340,
+  "output_tokens": 53
+ }
+}

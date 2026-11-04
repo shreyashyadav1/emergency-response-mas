@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 7. A 911 call reports a hazmat release (INC-05).\nThe caller's words: \"Unknown vapor cloud near Burke Way, workers are evacuating. About 8 people are hurt. No one seems critical yet. There is a strong chemical smell.\"\nThe caller's counts: 8 hurt, 0 critical, hazard hazmat, someone trapped: no. Caller reliability 0.85 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "hazmat_release",
+   "victims_per_reported": 1.096,
+   "red_per_critical": 0.901,
+   "red_per_other": 0.061,
+   "yellow_of_rest": 0.33,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 0.49,
+   "yellow": 2.73,
+   "green": 5.54,
+   "hazard": "hazmat",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":0.49,\"yellow\":2.73,\"green\":5.54,\"hazard\":\"hazmat\",\"trapped\":false,\"reason\":\"Caller likely under-counted victims.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1026,
+  "output_tokens": 82
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "kind": "counter",
+ "agent": "Hospital Coordination Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 132. Dispatch asks H1 to admit 1 patient(s) (RED) arriving in 24 min. You cannot simply accept: a bay is free but no doctor for neurosurgery. Decide whether to make the counter-offer or refuse.",
+ "data": {
+  "capacity_at_arrival": {
+   "hospital": "H1",
+   "minutes_until_arrival": 24,
+   "bays_expected_free_at_arrival": 2,
+   "bays_held_for_red": 2,
+   "patients_already_on_their_way": 1,
+   "red_patients_already_on_their_way": 1,
+   "on_this_ambulance": [
+    "RED needing neurosurgery"
+   ],
+   "why_not_a_plain_yes": "a bay is free but no doctor for neurosurgery",
+   "counter_offer_on_the_table": "yes if a doctor who can handle neurosurgery is lent to us",
+   "occupancy": 0.89,
+   "ambulances_waiting_at_door": 1
+  }
+ },
+ "output_text": "{\"decision\": \"counter\", \"reason\": \"yes if a doctor who can handle neurosurgery is lent to us\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 871,
+  "output_tokens": 38
+ }
+}

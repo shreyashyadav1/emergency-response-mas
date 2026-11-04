@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 29. A 911 call reports a crowd incident (INC-08).\nThe caller's words: \"Heat and crowding at a gathering on Garrison Lane, many feel faint. About 5 people are hurt. 1 looks badly hurt.\"\nThe caller's counts: 5 hurt, 1 critical, hazard none, someone trapped: no. Caller reliability 0.59 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "crowd_incident",
+   "victims_per_reported": 1.107,
+   "red_per_critical": 0.865,
+   "red_per_other": 0.039,
+   "yellow_of_rest": 0.395,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 1.02,
+   "yellow": 1.78,
+   "green": 2.73,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 1, \"yellow\": 2, \"green\": 2, \"hazard\": \"none\", \"trapped\": false, \"reason\": \"Base rates and statistical estimates adjusted for one critical and four other hurt individuals.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1109,
+  "output_tokens": 70
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 12. Contested units: several incidents want the same ambulance this minute (A3). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "A3",
+    "unit_type": "ALS",
+    "bids": [
+     {
+      "incident": "INC-01",
+      "needs": "ambulance",
+      "value": 0.008,
+      "priority": 32.1,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-01",
+      "needs": "ambulance",
+      "value": 0.008,
+      "priority": 32.1,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-03",
+      "needs": "ambulance",
+      "value": 0.0061,
+      "priority": 19.6,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-03",
+      "needs": "ambulance",
+      "value": 0.0006,
+      "priority": 19.6,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 7.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 7.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-01"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"A3\",\"incident\":\"INC-01\"}],\"reason\":\"INC-01 has the highest value for the unit.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1157,
+  "output_tokens": 43
+ }
+}

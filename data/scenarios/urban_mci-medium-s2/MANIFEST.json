@@ -1,0 +1,121 @@
+{
+  "checks": {
+    "als_unit_ready_early": true,
+    "arrivals_ordered": true,
+    "capacity_limits": true,
+    "every_need_has_a_provider": true,
+    "every_scene_need_has_a_team": true,
+    "foreign_keys": true,
+    "incident_counts_match_victims": true,
+    "inside_city": true,
+    "schema_roundtrip": true,
+    "unique_ids": true
+  },
+  "contention": {
+    "ambulance_pairs": [
+      [
+        "INC-01",
+        "INC-02"
+      ],
+      [
+        "INC-01",
+        "INC-04"
+      ],
+      [
+        "INC-02",
+        "INC-04"
+      ],
+      [
+        "INC-03",
+        "INC-05"
+      ],
+      [
+        "INC-03",
+        "INC-06"
+      ],
+      [
+        "INC-05",
+        "INC-06"
+      ],
+      [
+        "INC-09",
+        "INC-11"
+      ]
+    ],
+    "capability_demand": {
+      "burn_unit": 7,
+      "toxicology_decon": 3,
+      "trauma_surgery": 5
+    },
+    "n_ambulance_pairs": 7,
+    "nearest_capable_load": {
+      "H1": {
+        "free_er_bays": 4,
+        "red_yellow_nearest_capable": 19
+      },
+      "H2": {
+        "free_er_bays": 4,
+        "red_yellow_nearest_capable": 2
+      },
+      "H3": {
+        "free_er_bays": 2,
+        "red_yellow_nearest_capable": 0
+      }
+    },
+    "red_yellow_needing_single_provider": 7,
+    "single_provider": {
+      "burn_unit": {
+        "hospital": "H1",
+        "victims": 7
+      }
+    }
+  },
+  "counts": {
+    "ambulances": 5,
+    "doctors": 22,
+    "green": 22,
+    "hospitals": 3,
+    "incidents": 12,
+    "needs_icu": 10,
+    "nurses": 32,
+    "red": 9,
+    "responder_teams": 6,
+    "stations": 4,
+    "trapped": 0,
+    "victims": 43,
+    "yellow": 12
+  },
+  "files": {
+    "ambulances.csv": "ff23dce38e9c823e0d9f910a1b5ee1edaf06f604181e6d468fffd9c0bdae5552",
+    "hospitals.csv": "0d6b1dc6958c167e28615b190212bb284b3e942ae7e87fe49d929ab1550bf093",
+    "incidents.csv": "2d2a2c96a58c35aec4022ea186938b013aea962c7d3a0a448032a0a3a98d860d",
+    "responders.csv": "b76a3ae6065c3854bc4289a42402c154bcb64f17d55bf9882e38f544e297bbcb",
+    "scenario.json": "20f95868a44fd535406eb0efba427914a37710f1039a55e39a511e1157b05076",
+    "staff.csv": "507d32c3629f3b9c58c74b40a0f2b4a396dadfbf2a08d81f5922664b0cdd6ad9",
+    "stations.csv": "23e5d457825594c988c9de3dca95e1076f05b695d6f9b676270cbe5dc9d727f2",
+    "travel_times.csv": "94841f3a0c88b354e64cbbe7d8e20ae047cdc2df105f323f9bed118818bda824",
+    "victims.csv": "e15ad76d9f3a3d81cddf8b0e0000c8e3c6e1bd22e77219f86e4d4b78752bca5b"
+  },
+  "generator_version": "0.2.0",
+  "libraries": {
+    "faker": "40.43.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pydantic": "2.14.1",
+    "python": "3.13.14"
+  },
+  "pressure": {
+    "ambulance_pressure": 1.272,
+    "doctor_pressure": 0.412,
+    "er_bay_pressure": 1.114,
+    "mean_ambulance_cycle_min": 55.0,
+    "nurse_pressure": 0.623,
+    "red_per_als_unit": 3.0,
+    "specialist_pressure": 3.242
+  },
+  "scenario_id": "urban_mci-medium-s2",
+  "scenario_sha256": "20f95868a44fd535406eb0efba427914a37710f1039a55e39a511e1157b05076",
+  "seed": 2,
+  "stress": "medium",
+  "theme": "urban_mci"
+}

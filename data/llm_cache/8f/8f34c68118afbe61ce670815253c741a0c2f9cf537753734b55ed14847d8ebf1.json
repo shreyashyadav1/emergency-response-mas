@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 59. A 911 call reports a structural collapse (INC-10).\nThe caller's words: \"Part of a warehouse on Flores Lane has collapsed. About 5 people are hurt. 1 looks badly hurt. Someone is trapped.\"\nThe caller's counts: 5 hurt, 1 critical, hazard unknown, someone trapped: yes. Caller reliability 0.50 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "structural_collapse",
+   "victims_per_reported": 1.098,
+   "red_per_critical": 0.955,
+   "red_per_other": 0.088,
+   "yellow_of_rest": 0.462,
+   "trapped_rate": 0.86
+  },
+  "statistical_estimate": {
+   "red": 1.31,
+   "yellow": 1.93,
+   "green": 2.25,
+   "hazard": "structural",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\": 2, \"yellow\": 2, \"green\": 1, \"hazard\": \"structural\", \"trapped\": true, \"reason\": \"Base rates adjusted upward for a confirmed structural collapse with one trapped victim.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1109,
+  "output_tokens": 69
+ }
+}

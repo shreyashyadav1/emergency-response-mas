@@ -1,0 +1,39 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 104. Contested units: several incidents want the same team this minute (R6). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R6",
+    "unit_type": "paramedic qrv",
+    "bids": [
+     {
+      "incident": "INC-10",
+      "needs": "triage stabilization",
+      "value": 0.1378,
+      "priority": 1.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-12",
+      "needs": "triage stabilization",
+      "value": 0.7565,
+      "priority": 31.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-12"
+   }
+  ]
+ },
+ "output_text": "{\"awards\": [{\"unit\": \"R6\", \"incident\": \"INC-12\"}], \"reason\": \"Awarding R6 to INC-12 maximizes expected survivors gained per minute.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1079,
+  "output_tokens": 52
+ }
+}

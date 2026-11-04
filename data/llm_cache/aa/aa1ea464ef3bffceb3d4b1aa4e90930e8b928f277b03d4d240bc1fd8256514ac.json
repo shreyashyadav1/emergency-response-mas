@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 1. A 911 call reports a structural collapse (INC-02).\nThe caller's words: \"A floor gave way in a apartment block on Rodriguez Boulevard. About 9 people are hurt. 2 look badly hurt. Debris is still coming down.\"\nThe caller's counts: 9 hurt, 2 critical, hazard structural, someone trapped: no. Caller reliability 0.58 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "structural_collapse",
+   "victims_per_reported": 1.098,
+   "red_per_critical": 0.955,
+   "red_per_other": 0.088,
+   "yellow_of_rest": 0.462,
+   "trapped_rate": 0.86
+  },
+  "statistical_estimate": {
+   "red": 2.53,
+   "yellow": 3.4,
+   "green": 3.96,
+   "hazard": "structural",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":2.53,\"yellow\":3.4,\"green\":3.96,\"hazard\":\"structural\",\"trapped\":true,\"reason\":\"Caller reported ongoing debris, indicating potential for more victims.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1023,
+  "output_tokens": 86
+ }
+}

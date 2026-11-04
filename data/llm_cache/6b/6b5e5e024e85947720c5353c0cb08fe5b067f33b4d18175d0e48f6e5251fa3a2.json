@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 36. A 911 call reports a multi vehicle accident (INC-11).\nThe caller's words: \"Caller reports a crash involving several vehicles on Adams Lane. About 2 people are hurt. No one seems critical yet. Someone is trapped. Flames and smoke are visible.\"\nThe caller's counts: 2 hurt, 0 critical, hazard fire, someone trapped: yes. Caller reliability 0.53 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 0.15,
+   "yellow": 0.66,
+   "green": 1.4,
+   "hazard": "fire",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":0.15,\"yellow\":0.66,\"green\":1.4,\"hazard\":\"fire\",\"trapped\":true,\"reason\":\"Caller reported someone trapped and flames visible.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1028,
+  "output_tokens": 82
+ }
+}

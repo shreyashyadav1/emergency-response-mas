@@ -1,0 +1,151 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 75. Contested units: several incidents want the same ambulance this minute (A3). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "A3",
+    "unit_type": "ALS",
+    "bids": [
+     {
+      "incident": "INC-02",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 0.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-02",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 0.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-03",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 0.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-03",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 0.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 3.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 3.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 2.3,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 2.3,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-06",
+      "needs": "ambulance",
+      "value": 0.0004,
+      "priority": 5.1,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-06",
+      "needs": "ambulance",
+      "value": 0.0004,
+      "priority": 5.1,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-07",
+      "needs": "ambulance",
+      "value": 0.0055,
+      "priority": 16.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-07",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 16.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "ambulance",
+      "value": 0.0098,
+      "priority": 33.2,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "ambulance",
+      "value": 0.0098,
+      "priority": 33.2,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-10",
+      "needs": "ambulance",
+      "value": 0.0075,
+      "priority": 16.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-10",
+      "needs": "ambulance",
+      "value": 0.0,
+      "priority": 16.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-08"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"A3\",\"incident\":\"INC-08\"}],\"reason\":\"INC-08 has the highest priority and value.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1633,
+  "output_tokens": 42
+ }
+}

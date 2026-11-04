@@ -1,0 +1,38 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 74. Ambulance A1 (ALS) is taking patients from INC-06: RED needing trauma surgery.\nHospitals that can treat everyone on board: H1, H2. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 33,
+    "bays_free_now": 2,
+    "bays_expected_free_at_arrival": 2,
+    "patients_already_heading_there": 2,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.86,
+    "bays_held_for_red": 2
+   },
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 43,
+    "bays_free_now": 4,
+    "bays_expected_free_at_arrival": 4,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.6,
+    "bays_held_for_red": 1
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\": [\"H1\", \"H2\"], \"reason\": \"H1 is closer and expected to have bays free upon arrival.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 831,
+  "output_tokens": 41
+ }
+}

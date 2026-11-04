@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 74. A 911 call reports a multi vehicle accident (INC-11).\nThe caller's words: \"Multiple cars collided on Mcneil Lane and traffic has stopped. About 3 people are hurt. No one seems critical yet. Someone is trapped. Flames and smoke are visible.\"\nThe caller's counts: 3 hurt, 0 critical, hazard fire, someone trapped: yes. Caller reliability 0.92 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 0.23,
+   "yellow": 0.99,
+   "green": 2.1,
+   "hazard": "fire",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\": 0, \"yellow\": 1, \"green\": 2, \"hazard\": \"fire\", \"trapped\": true, \"reason\": \"Caller reports three hurt with no one critical yet and someone trapped amid visible flames.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1131,
+  "output_tokens": 71
+ }
+}

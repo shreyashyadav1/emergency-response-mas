@@ -1,0 +1,62 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 16. Contested units: several incidents want the same team this minute (R4, R5). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R4",
+    "unit_type": "hazmat",
+    "bids": [
+     {
+      "incident": "INC-03",
+      "needs": "hazmat",
+      "value": 0.4287,
+      "priority": 19.9,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "hazmat",
+      "value": 0.5075,
+      "priority": 19.9,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-04"
+   },
+   {
+    "unit": "R5",
+    "unit_type": "fire engine",
+    "bids": [
+     {
+      "incident": "INC-03",
+      "needs": "triage stabilization",
+      "value": 0.4166,
+      "priority": 19.9,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "triage stabilization",
+      "value": 0.606,
+      "priority": 19.9,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-04"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"R4\",\"incident\":\"INC-04\"},{\"unit\":\"R5\",\"incident\":\"INC-04\"}],\"reason\":\"INC-04 maximizes the expected survivors for both units.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1101,
+  "output_tokens": 55
+ }
+}

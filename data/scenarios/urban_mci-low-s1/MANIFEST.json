@@ -1,0 +1,194 @@
+{
+  "checks": {
+    "als_unit_ready_early": true,
+    "arrivals_ordered": true,
+    "capacity_limits": true,
+    "every_need_has_a_provider": true,
+    "every_scene_need_has_a_team": true,
+    "foreign_keys": true,
+    "incident_counts_match_victims": true,
+    "inside_city": true,
+    "schema_roundtrip": true,
+    "unique_ids": true
+  },
+  "contention": {
+    "ambulance_pairs": [
+      [
+        "INC-01",
+        "INC-02"
+      ],
+      [
+        "INC-01",
+        "INC-03"
+      ],
+      [
+        "INC-01",
+        "INC-04"
+      ],
+      [
+        "INC-01",
+        "INC-05"
+      ],
+      [
+        "INC-02",
+        "INC-03"
+      ],
+      [
+        "INC-02",
+        "INC-04"
+      ],
+      [
+        "INC-02",
+        "INC-05"
+      ],
+      [
+        "INC-02",
+        "INC-06"
+      ],
+      [
+        "INC-02",
+        "INC-07"
+      ],
+      [
+        "INC-03",
+        "INC-04"
+      ],
+      [
+        "INC-03",
+        "INC-05"
+      ],
+      [
+        "INC-03",
+        "INC-06"
+      ],
+      [
+        "INC-03",
+        "INC-07"
+      ],
+      [
+        "INC-04",
+        "INC-05"
+      ],
+      [
+        "INC-04",
+        "INC-06"
+      ],
+      [
+        "INC-04",
+        "INC-07"
+      ],
+      [
+        "INC-05",
+        "INC-06"
+      ],
+      [
+        "INC-05",
+        "INC-07"
+      ],
+      [
+        "INC-06",
+        "INC-07"
+      ],
+      [
+        "INC-09",
+        "INC-10"
+      ],
+      [
+        "INC-09",
+        "INC-11"
+      ],
+      [
+        "INC-10",
+        "INC-11"
+      ],
+      [
+        "INC-10",
+        "INC-12"
+      ],
+      [
+        "INC-11",
+        "INC-12"
+      ]
+    ],
+    "capability_demand": {
+      "burn_unit": 2,
+      "critical_care": 1,
+      "neurosurgery": 2,
+      "trauma_surgery": 5
+    },
+    "n_ambulance_pairs": 24,
+    "nearest_capable_load": {
+      "H1": {
+        "free_er_bays": 9,
+        "red_yellow_nearest_capable": 17
+      },
+      "H2": {
+        "free_er_bays": 6,
+        "red_yellow_nearest_capable": 2
+      },
+      "H3": {
+        "free_er_bays": 4,
+        "red_yellow_nearest_capable": 0
+      }
+    },
+    "red_yellow_needing_single_provider": 4,
+    "single_provider": {
+      "burn_unit": {
+        "hospital": "H1",
+        "victims": 2
+      },
+      "neurosurgery": {
+        "hospital": "H1",
+        "victims": 2
+      }
+    }
+  },
+  "counts": {
+    "ambulances": 5,
+    "doctors": 22,
+    "green": 22,
+    "hospitals": 3,
+    "incidents": 12,
+    "needs_icu": 11,
+    "nurses": 32,
+    "red": 9,
+    "responder_teams": 6,
+    "stations": 4,
+    "trapped": 3,
+    "victims": 41,
+    "yellow": 10
+  },
+  "files": {
+    "ambulances.csv": "12dd1232e9331b4e1f42487e57d60c785870f1c6be726feb672c3d13f729c9d6",
+    "hospitals.csv": "48304fbe013c8ffa8f28e610def7bbd4d1bb73cd9ed1ed4c3843a587ee1e08f4",
+    "incidents.csv": "0b2a6405810a65067f4b2eb0580087f5108e0ccbc221fec372805a35777edaf1",
+    "responders.csv": "8b2905b197cd6e42062c68523ee9c63ef9476ab6b84b6a7da2012d7fa3bc4ebc",
+    "scenario.json": "9bade532329deae8c21544754465e2930bad2afbebe186076df16720bc3e95bc",
+    "staff.csv": "3543111679e9cc79da193c8891f5e042f9eca3589607f89127609de5c1e2bb4e",
+    "stations.csv": "f82cd11fb4cf271488f0a75b05d6a391d1228746f0f070a4879e20648474eb32",
+    "travel_times.csv": "85aa2213f85e502aa5cd7e52f89a74d675883db6359b5394a2907504ea335de7",
+    "victims.csv": "c34a6e024a953e5801b2d527c3bd9c32d936052e04d0b0734ec1a7897ae1c929"
+  },
+  "generator_version": "0.2.0",
+  "libraries": {
+    "faker": "40.43.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pydantic": "2.14.1",
+    "python": "3.13.14"
+  },
+  "pressure": {
+    "ambulance_pressure": 1.052,
+    "doctor_pressure": 0.255,
+    "er_bay_pressure": 0.537,
+    "mean_ambulance_cycle_min": 47.3,
+    "nurse_pressure": 0.33,
+    "red_per_als_unit": 3.0,
+    "specialist_pressure": 0.95
+  },
+  "scenario_id": "urban_mci-low-s1",
+  "scenario_sha256": "9bade532329deae8c21544754465e2930bad2afbebe186076df16720bc3e95bc",
+  "seed": 1,
+  "stress": "low",
+  "theme": "urban_mci"
+}

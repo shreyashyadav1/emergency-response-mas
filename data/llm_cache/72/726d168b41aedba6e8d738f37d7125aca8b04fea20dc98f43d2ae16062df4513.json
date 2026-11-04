@@ -1,0 +1,38 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 125. Ambulance A4 (BLS) is taking patients from INC-06: YELLOW needing trauma surgery, YELLOW needing general emergency.\nHospitals that can treat everyone on board: H1, H2. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 30,
+    "bays_free_now": 6,
+    "bays_expected_free_at_arrival": 7,
+    "patients_already_heading_there": 1,
+    "ambulances_waiting_at_door": 1,
+    "occupancy": 0.68,
+    "bays_held_for_red": 2
+   },
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 39,
+    "bays_free_now": 3,
+    "bays_expected_free_at_arrival": 2,
+    "patients_already_heading_there": 1,
+    "ambulances_waiting_at_door": 1,
+    "occupancy": 0.7,
+    "bays_held_for_red": 1
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\": [\"H1\", \"H2\"], \"reason\": \"H1 is closer (30 min vs 39 min) and has more expected free bays than H2.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 845,
+  "output_tokens": 52
+ }
+}

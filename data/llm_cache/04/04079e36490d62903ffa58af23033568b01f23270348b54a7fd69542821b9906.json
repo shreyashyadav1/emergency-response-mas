@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 54. A 911 call reports a multi vehicle accident (INC-08).\nThe caller's words: \"Caller reports a crash involving several vehicles on Armstrong Avenue. Caller thinks maybe 1 people are hurt but cannot be sure. No one seems critical yet.\"\nThe caller's counts: 1 hurt, 0 critical, hazard none, someone trapped: no. Caller reliability 0.30 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 0.08,
+   "yellow": 0.33,
+   "green": 0.7,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 0.0, \"yellow\": 0.33, \"green\": 0.77, \"hazard\": \"none\", \"trapped\": false, \"reason\": \"Statistical estimate used as caller reports no critical injuries or trapped persons in a multi-vehicle crash.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1119,
+  "output_tokens": 82
+ }
+}

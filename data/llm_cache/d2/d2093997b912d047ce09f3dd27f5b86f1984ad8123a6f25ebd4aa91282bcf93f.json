@@ -1,0 +1,39 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 77. Contested units: several incidents want the same team this minute (R4). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R4",
+    "unit_type": "hazmat",
+    "bids": [
+     {
+      "incident": "INC-02",
+      "needs": "hazmat",
+      "value": 0.22,
+      "priority": 1.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-03",
+      "needs": "hazmat",
+      "value": 1.3156,
+      "priority": 31.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-03"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"R4\",\"incident\":\"INC-03\"}],\"reason\":\"INC-03 maximizes the expected survivors gained.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 969,
+  "output_tokens": 42
+ }
+}

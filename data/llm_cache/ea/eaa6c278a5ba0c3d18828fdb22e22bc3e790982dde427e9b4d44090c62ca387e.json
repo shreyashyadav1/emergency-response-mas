@@ -1,0 +1,30 @@
+{
+ "kind": "settlement",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 207. Admission settlement: ambulance A1 carries RED, and hospitals answered with counter-offers. Pick how to settle it.",
+ "data": {
+  "settlement_options": [
+   {
+    "option": 0,
+    "hospital": "H3",
+    "deal": "accepts if a clinician is moved there",
+    "care_starts_in_min": 28,
+    "detail": "H3 accepts if D16 (intensivist) comes from H2"
+   },
+   {
+    "option": 1,
+    "hospital": "H1",
+    "deal": "accepts on arrival",
+    "care_starts_in_min": 32,
+    "detail": "H1 accepts on arrival (ETA 32 min)"
+   }
+  ]
+ },
+ "output_text": "{\"option\":0,\"reason\":\"It starts care sooner by moving a clinician.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 949,
+  "output_tokens": 29
+ }
+}

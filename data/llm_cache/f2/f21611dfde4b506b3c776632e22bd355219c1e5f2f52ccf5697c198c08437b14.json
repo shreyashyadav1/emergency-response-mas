@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 36. A 911 call reports a hazmat release (INC-08).\nThe caller's words: \"Unknown vapor cloud near Cooper Boulevard, workers are evacuating. About 7 people are hurt. 1 looks badly hurt.\"\nThe caller's counts: 7 hurt, 1 critical, hazard unknown, someone trapped: no. Caller reliability 0.75 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "hazmat_release",
+   "victims_per_reported": 1.096,
+   "red_per_critical": 0.901,
+   "red_per_other": 0.061,
+   "yellow_of_rest": 0.33,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 1.27,
+   "yellow": 2.11,
+   "green": 4.29,
+   "hazard": "hazmat",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":1.27,\"yellow\":2.11,\"green\":4.29,\"hazard\":\"hazmat\",\"trapped\":false,\"reason\":\"Caller reported 1 critical, but base rates suggest more victims.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1010,
+  "output_tokens": 88
+ }
+}

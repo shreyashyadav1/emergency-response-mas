@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 8. A 911 call reports a multi vehicle accident (INC-03).\nThe caller's words: \"Chain-reaction collision on Sherman Way, caller is standing nearby. Caller thinks maybe 5 people are hurt but cannot be sure. 1 looks badly hurt.\"\nThe caller's counts: 5 hurt, 1 critical, hazard none, someone trapped: no. Caller reliability 0.40 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 1.16,
+   "yellow": 1.4,
+   "green": 2.98,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":1.16,\"yellow\":1.4,\"green\":2.98,\"hazard\":\"none\",\"trapped\":false,\"reason\":\"Caller under-counted victims and misjudged criticality.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1024,
+  "output_tokens": 86
+ }
+}

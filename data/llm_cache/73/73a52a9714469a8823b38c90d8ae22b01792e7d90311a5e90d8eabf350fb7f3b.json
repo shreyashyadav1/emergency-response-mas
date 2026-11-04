@@ -1,0 +1,30 @@
+{
+ "kind": "counter",
+ "agent": "Hospital Coordination Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 234. Dispatch asks H1 to admit 2 patient(s) (YELLOW, YELLOW) arriving in 17 min. You cannot simply accept: full now, room expected in 19 min. Decide whether to make the counter-offer or refuse.",
+ "data": {
+  "capacity_at_arrival": {
+   "hospital": "H1",
+   "minutes_until_arrival": 17,
+   "bays_expected_free_at_arrival": 2,
+   "bays_held_for_red": 2,
+   "patients_already_on_their_way": 4,
+   "red_patients_already_on_their_way": 2,
+   "on_this_ambulance": [
+    "YELLOW needing general emergency",
+    "YELLOW needing general emergency"
+   ],
+   "why_not_a_plain_yes": "full now, room expected in 19 min",
+   "counter_offer_on_the_table": "yes in 19 minutes",
+   "occupancy": 0.68,
+   "ambulances_waiting_at_door": 1
+  }
+ },
+ "output_text": "{\"decision\": \"counter\", \"reason\": \"room expected in 19 minutes\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 871,
+  "output_tokens": 30
+ }
+}

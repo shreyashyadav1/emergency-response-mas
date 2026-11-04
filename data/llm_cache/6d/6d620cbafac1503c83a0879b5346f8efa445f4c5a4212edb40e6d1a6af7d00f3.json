@@ -1,0 +1,39 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 129. Contested units: several incidents want the same team this minute (R4). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R4",
+    "unit_type": "hazmat",
+    "bids": [
+     {
+      "incident": "INC-11",
+      "needs": "hazmat",
+      "value": 0.6942,
+      "priority": 15.1,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-12",
+      "needs": "hazmat",
+      "value": 0.8595,
+      "priority": 32.0,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-12"
+   }
+  ]
+ },
+ "output_text": "{\"awards\": [{\"unit\": \"R4\", \"incident\": \"INC-12\"}], \"reason\": \"INC-12 has higher priority and yields greater expected survivors gained from the hazmat unit.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1076,
+  "output_tokens": 55
+ }
+}

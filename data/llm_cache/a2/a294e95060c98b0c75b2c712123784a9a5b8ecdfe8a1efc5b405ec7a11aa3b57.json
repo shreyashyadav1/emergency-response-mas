@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 78. A 911 call reports a hazmat release (INC-10).\nThe caller's words: \"A storage tank is leaking on Rivas Street and people are coughing. About 2 people are hurt. No one seems critical yet. There is a strong chemical smell.\"\nThe caller's counts: 2 hurt, 0 critical, hazard hazmat, someone trapped: no. Caller reliability 0.81 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "hazmat_release",
+   "victims_per_reported": 1.096,
+   "red_per_critical": 0.901,
+   "red_per_other": 0.061,
+   "yellow_of_rest": 0.33,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 0.12,
+   "yellow": 0.68,
+   "green": 1.39,
+   "hazard": "hazmat",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":0.12,\"yellow\":0.68,\"green\":1.39,\"hazard\":\"hazmat\",\"trapped\":false,\"reason\":\"Caller under-counted victims and misjudged criticality.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1030,
+  "output_tokens": 87
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 34. A 911 call reports a hazmat release (INC-07).\nThe caller's words: \"Chemical leak reported near Phillips Street, caller can smell fumes. About 7 people are hurt. 2 look badly hurt. There is a strong chemical smell.\"\nThe caller's counts: 7 hurt, 2 critical, hazard hazmat, someone trapped: no. Caller reliability 0.52 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "hazmat_release",
+   "victims_per_reported": 1.096,
+   "red_per_critical": 0.901,
+   "red_per_other": 0.061,
+   "yellow_of_rest": 0.33,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 2.11,
+   "yellow": 1.84,
+   "green": 3.72,
+   "hazard": "hazmat",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":2.11,\"yellow\":1.84,\"green\":3.72,\"hazard\":\"hazmat\",\"trapped\":false,\"reason\":\"Caller reported a strong chemical smell and multiple injuries.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1026,
+  "output_tokens": 85
+ }
+}

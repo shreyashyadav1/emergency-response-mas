@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 47. A 911 call reports a crowd incident (INC-09).\nThe caller's words: \"Crowd surge at an event on Newton Road, people are on the ground. About 3 people are hurt. No one seems critical yet.\"\nThe caller's counts: 3 hurt, 0 critical, hazard none, someone trapped: no. Caller reliability 0.64 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "crowd_incident",
+   "victims_per_reported": 1.107,
+   "red_per_critical": 0.865,
+   "red_per_other": 0.039,
+   "yellow_of_rest": 0.395,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 0.12,
+   "yellow": 1.27,
+   "green": 1.94,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":0.12,\"yellow\":1.27,\"green\":1.94,\"hazard\":\"none\",\"trapped\":false,\"reason\":\"Caller under-counted victims and misjudged criticality.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1016,
+  "output_tokens": 86
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 41. A 911 call reports a crowd incident (INC-07).\nThe caller's words: \"Several people collapsed in a crowded area on Mcbride Way. About 4 people are hurt. 1 looks badly hurt.\"\nThe caller's counts: 4 hurt, 1 critical, hazard none, someone trapped: no. Caller reliability 0.61 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "crowd_incident",
+   "victims_per_reported": 1.107,
+   "red_per_critical": 0.865,
+   "red_per_other": 0.039,
+   "yellow_of_rest": 0.395,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 0.98,
+   "yellow": 1.36,
+   "green": 2.08,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 1.0, \"yellow\": 1.4, \"green\": 2.1, \"hazard\": \"none\", \"trapped\": false, \"reason\": \"Base rates and statistical estimates align closely with the caller's report of 4 injured individuals and 1 critical.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1105,
+  "output_tokens": 84
+ }
+}

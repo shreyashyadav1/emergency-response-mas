@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 70. A 911 call reports a building fire (INC-10).\nThe caller's words: \"Fire alarm and visible fire at a warehouse on Torres Road. About 3 people are hurt. 3 look badly hurt. Flames and smoke are visible.\"\nThe caller's counts: 3 hurt, 3 critical, hazard fire, someone trapped: no. Caller reliability 0.63 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 2.83,
+   "yellow": 0.18,
+   "green": 0.3,
+   "hazard": "fire",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":2.83,\"yellow\":0.18,\"green\":0.3,\"hazard\":\"fire\",\"trapped\":false,\"reason\":\"Caller under-counted victims and misjudged critical status.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1018,
+  "output_tokens": 86
+ }
+}

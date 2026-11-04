@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 17. A 911 call reports a crowd incident (INC-06).\nThe caller's words: \"Several people collapsed in a crowded area on Waters Boulevard. Caller thinks maybe 3 people are hurt but cannot be sure. 2 look badly hurt.\"\nThe caller's counts: 3 hurt, 2 critical, hazard none, someone trapped: no. Caller reliability 0.43 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "crowd_incident",
+   "victims_per_reported": 1.107,
+   "red_per_critical": 0.865,
+   "red_per_other": 0.039,
+   "yellow_of_rest": 0.395,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 1.77,
+   "yellow": 0.61,
+   "green": 0.94,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":1.77,\"yellow\":0.61,\"green\":0.94,\"hazard\":\"none\",\"trapped\":false,\"reason\":\"Caller underestimated the number of victims.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1018,
+  "output_tokens": 81
+ }
+}

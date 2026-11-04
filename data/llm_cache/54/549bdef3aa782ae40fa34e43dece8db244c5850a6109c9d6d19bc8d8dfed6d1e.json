@@ -1,0 +1,142 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 59. Contested units: several incidents want the same ambulance this minute (A1, A4). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "A1",
+    "unit_type": "ALS",
+    "bids": [
+     {
+      "incident": "INC-01",
+      "needs": "ambulance",
+      "value": 0.0015,
+      "priority": 15.0,
+      "best_other_unit": "A5",
+      "its_value": 0.0015
+     },
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0044,
+      "priority": 17.0,
+      "best_other_unit": "A5",
+      "its_value": 0.0044
+     },
+     {
+      "incident": "INC-05",
+      "needs": "ambulance",
+      "value": 0.0011,
+      "priority": 5.4,
+      "best_other_unit": "A5",
+      "its_value": 0.0011
+     },
+     {
+      "incident": "INC-06",
+      "needs": "ambulance",
+      "value": 0.0077,
+      "priority": 63.5,
+      "best_other_unit": "A5",
+      "its_value": 0.0077
+     },
+     {
+      "incident": "INC-06",
+      "needs": "ambulance",
+      "value": 0.0077,
+      "priority": 63.5,
+      "best_other_unit": "A5",
+      "its_value": 0.0077
+     },
+     {
+      "incident": "INC-07",
+      "needs": "ambulance",
+      "value": 0.007,
+      "priority": 31.7,
+      "best_other_unit": "A5",
+      "its_value": 0.007
+     },
+     {
+      "incident": "INC-07",
+      "needs": "ambulance",
+      "value": 0.007,
+      "priority": 31.7,
+      "best_other_unit": "A5",
+      "its_value": 0.007
+     },
+     {
+      "incident": "INC-08",
+      "needs": "ambulance",
+      "value": 0.0013,
+      "priority": 3.5,
+      "best_other_unit": "A5",
+      "its_value": 0.0013
+     },
+     {
+      "incident": "INC-09",
+      "needs": "ambulance",
+      "value": 0.0069,
+      "priority": 22.5,
+      "best_other_unit": "A5",
+      "its_value": 0.0069
+     },
+     {
+      "incident": "INC-09",
+      "needs": "ambulance",
+      "value": 0.001,
+      "priority": 22.5,
+      "best_other_unit": "A5",
+      "its_value": 0.001
+     }
+    ],
+    "optimizer_pick": "INC-06"
+   },
+   {
+    "unit": "A4",
+    "unit_type": "BLS",
+    "bids": [
+     {
+      "incident": "INC-02",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 0.6,
+      "best_other_unit": "A5",
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-02",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 0.6,
+      "best_other_unit": "A5",
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-04",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 17.0,
+      "best_other_unit": "A5",
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 5.4,
+      "best_other_unit": "A5",
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-05"
+   }
+  ]
+ },
+ "output_text": "{\"awards\": [{\"unit\": \"A1\", \"incident\": \"INC-06\"}, {\"unit\": \"A4\", \"incident\": \"INC-05\"}], \"reason\": \"Following optimizer picks to maximize total expected value.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1803,
+  "output_tokens": 61
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 112. Ambulance A4 (BLS) is taking patients from INC-12: YELLOW needing toxicology decon, YELLOW needing general emergency.\nHospitals that can treat everyone on board: H2, H1. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 18,
+    "bays_free_now": 1,
+    "bays_expected_free_at_arrival": 2,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.92,
+    "bays_held_for_red": 1
+   },
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 26,
+    "bays_free_now": 4,
+    "bays_expected_free_at_arrival": 6,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.71,
+    "bays_held_for_red": 2
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\":[\"H2\",\"H1\"],\"reason\":\"H2 has a bay free now and will have more available upon arrival.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 804,
+  "output_tokens": 41
+ }
+}

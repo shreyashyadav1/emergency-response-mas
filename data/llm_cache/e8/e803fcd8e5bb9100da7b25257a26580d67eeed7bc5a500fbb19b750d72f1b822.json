@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 21. A 911 call reports a multi vehicle accident (INC-06).\nThe caller's words: \"Caller reports a crash involving several vehicles on Garcia Lane. About 1 person is hurt. 1 looks badly hurt. Someone is trapped.\"\nThe caller's counts: 1 hurt, 1 critical, hazard none, someone trapped: yes. Caller reliability 0.66 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 0.85,
+   "yellow": 0.08,
+   "green": 0.17,
+   "hazard": "none",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":1.0,\"yellow\":0.08,\"green\":0.17,\"hazard\":\"none\",\"trapped\":true,\"reason\":\"Caller reported someone trapped.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1016,
+  "output_tokens": 79
+ }
+}

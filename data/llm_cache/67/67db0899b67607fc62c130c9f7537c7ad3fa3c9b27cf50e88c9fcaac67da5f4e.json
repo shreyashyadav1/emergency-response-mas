@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 31. A 911 call reports a multi vehicle accident (INC-08).\nThe caller's words: \"Chain-reaction collision on Cobb Road, caller is standing nearby. About 2 people are hurt. No one seems critical yet.\"\nThe caller's counts: 2 hurt, 0 critical, hazard none, someone trapped: no. Caller reliability 0.69 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "multi_vehicle_accident",
+   "victims_per_reported": 1.105,
+   "red_per_critical": 0.854,
+   "red_per_other": 0.075,
+   "yellow_of_rest": 0.319,
+   "trapped_rate": 0.296
+  },
+  "statistical_estimate": {
+   "red": 0.15,
+   "yellow": 0.66,
+   "green": 1.4,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 0.15, \"yellow\": 0.66, \"green\": 1.4, \"hazard\": \"none\", \"trapped\": false, \"reason\": \"Base rates and statistical estimates for this multi-vehicle collision indicate fractional expected victims without critical indicators.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1111,
+  "output_tokens": 82
+ }
+}

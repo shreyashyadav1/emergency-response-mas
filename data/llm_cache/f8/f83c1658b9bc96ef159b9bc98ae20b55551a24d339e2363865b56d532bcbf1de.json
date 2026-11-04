@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 72. A 911 call reports a building fire (INC-11).\nThe caller's words: \"Caller sees flames and heavy smoke from a restaurant on Black Boulevard. Caller thinks maybe 6 people are hurt but cannot be sure. No one seems critical yet. Flames and smoke are visible.\"\nThe caller's counts: 6 hurt, 0 critical, hazard fire, someone trapped: no. Caller reliability 0.30 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 0.44,
+   "yellow": 2.33,
+   "green": 3.86,
+   "hazard": "fire",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":0.44,\"yellow\":2.33,\"green\":3.86,\"hazard\":\"fire\",\"trapped\":false,\"reason\":\"Caller underestimated the number of victims.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1032,
+  "output_tokens": 81
+ }
+}

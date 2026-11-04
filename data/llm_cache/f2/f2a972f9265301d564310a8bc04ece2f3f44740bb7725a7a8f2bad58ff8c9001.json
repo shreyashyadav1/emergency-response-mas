@@ -1,0 +1,39 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 29. Contested units: several incidents want the same team this minute (R5). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R5",
+    "unit_type": "fire engine",
+    "bids": [
+     {
+      "incident": "INC-04",
+      "needs": "fire suppression",
+      "value": 1.3691,
+      "priority": 37.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-07",
+      "needs": "fire suppression",
+      "value": 0.6644,
+      "priority": 3.6,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-04"
+   }
+  ]
+ },
+ "output_text": "{\"awards\": [{\"unit\": \"R5\", \"incident\": \"INC-04\"}], \"reason\": \"INC-04 yields higher survivors gained per minute and has a higher priority.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1073,
+  "output_tokens": 52
+ }
+}

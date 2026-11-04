@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 2. A 911 call reports a building fire (INC-02).\nThe caller's words: \"Fire reported in a parking garage on Smith Street. About 2 people are hurt. No one seems critical yet. Flames and smoke are visible.\"\nThe caller's counts: 2 hurt, 0 critical, hazard fire, someone trapped: no. Caller reliability 0.46 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 0.15,
+   "yellow": 0.78,
+   "green": 1.29,
+   "hazard": "fire",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 0.15, \"yellow\": 0.78, \"green\": 1.29, \"hazard\": \"fire\", \"trapped\": false, \"reason\": \"Statistical estimate based on 2 reported injured with no critical conditions or entrapment mentioned.\"}",
+ "usage": {
+  "requests": 3,
+  "input_tokens": 1690,
+  "output_tokens": 81
+ }
+}

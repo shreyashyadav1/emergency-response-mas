@@ -1,0 +1,49 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 126. Ambulance A5 (ALS) is taking patients from INC-12: GREEN needing general emergency.\nHospitals that can treat everyone on board: H1, H3, H2. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 15,
+    "bays_free_now": 2,
+    "bays_expected_free_at_arrival": 5,
+    "patients_already_heading_there": 2,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.63,
+    "bays_held_for_red": 2
+   },
+   {
+    "hospital": "H3",
+    "name": "Northfield Community Hospital",
+    "minutes_to_arrive": 29,
+    "bays_free_now": 3,
+    "bays_expected_free_at_arrival": 4,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.62,
+    "bays_held_for_red": 0
+   },
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 30,
+    "bays_free_now": 3,
+    "bays_expected_free_at_arrival": 3,
+    "patients_already_heading_there": 1,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.77,
+    "bays_held_for_red": 1
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\":[\"H1\",\"H3\",\"H2\"],\"reason\":\"H1 has bays free now and expected free at arrival.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 879,
+  "output_tokens": 41
+ }
+}

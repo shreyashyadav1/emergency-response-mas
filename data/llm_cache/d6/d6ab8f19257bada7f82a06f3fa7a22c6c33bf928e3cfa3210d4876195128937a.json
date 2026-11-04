@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 56. A 911 call reports a building fire (INC-10).\nThe caller's words: \"Caller sees flames and heavy smoke from a warehouse on Hernandez Way. About 4 people are hurt. 1 looks badly hurt. Someone is trapped. Flames and smoke are visible.\"\nThe caller's counts: 4 hurt, 1 critical, hazard fire, someone trapped: yes. Caller reliability 0.75 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 1.16,
+   "yellow": 1.23,
+   "green": 2.03,
+   "hazard": "fire",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":1.16,\"yellow\":1.23,\"green\":2.03,\"hazard\":\"fire\",\"trapped\":true,\"reason\":\"Caller reports flames, smoke, and someone trapped.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1028,
+  "output_tokens": 84
+ }
+}

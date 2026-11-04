@@ -1,0 +1,86 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 64. Contested units: several incidents want the same ambulance this minute (A2, A5). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "A2",
+    "unit_type": "BLS",
+    "bids": [
+     {
+      "incident": "INC-02",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 15.3,
+      "best_other_unit": "A5",
+      "its_value": 0.0001
+     },
+     {
+      "incident": "INC-03",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 23.2,
+      "best_other_unit": "A5",
+      "its_value": 0.0001
+     },
+     {
+      "incident": "INC-03",
+      "needs": "ambulance",
+      "value": 0.0001,
+      "priority": 23.2,
+      "best_other_unit": "A5",
+      "its_value": 0.0001
+     }
+    ],
+    "optimizer_pick": "INC-06"
+   },
+   {
+    "unit": "A5",
+    "unit_type": "ALS",
+    "bids": [
+     {
+      "incident": "INC-02",
+      "needs": "ambulance",
+      "value": 0.0054,
+      "priority": 15.3,
+      "best_other_unit": "A2",
+      "its_value": 0.0001
+     },
+     {
+      "incident": "INC-05",
+      "needs": "ambulance",
+      "value": 0.0006,
+      "priority": 1.8,
+      "best_other_unit": "A2",
+      "its_value": 0.0001
+     },
+     {
+      "incident": "INC-06",
+      "needs": "ambulance",
+      "value": 0.003,
+      "priority": 27.6,
+      "best_other_unit": "A2",
+      "its_value": 0.0003
+     },
+     {
+      "incident": "INC-08",
+      "needs": "ambulance",
+      "value": 0.0007,
+      "priority": 2.7,
+      "best_other_unit": "A2",
+      "its_value": 0.0001
+     }
+    ],
+    "optimizer_pick": "INC-02"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"A2\",\"incident\":\"INC-03\"},{\"unit\":\"A5\",\"incident\":\"INC-02\"}],\"reason\":\"Maximizing overall survivor value.\"}",
+ "usage": {
+  "requests": 3,
+  "input_tokens": 2987,
+  "output_tokens": 91
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 57. Contested units: several incidents want the same team this minute (R1). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R1",
+    "unit_type": "fire engine",
+    "bids": [
+     {
+      "incident": "INC-03",
+      "needs": "triage stabilization",
+      "value": 0.3603,
+      "priority": 19.9,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "triage stabilization",
+      "value": 0.229,
+      "priority": 5.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "triage stabilization",
+      "value": 0.1523,
+      "priority": 3.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-03"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"R1\",\"incident\":\"INC-03\"}],\"reason\":\"INC-03 has the highest value for saving lives.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1020,
+  "output_tokens": 43
+ }
+}

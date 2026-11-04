@@ -1,0 +1,178 @@
+{
+  "checks": {
+    "als_unit_ready_early": true,
+    "arrivals_ordered": true,
+    "capacity_limits": true,
+    "every_need_has_a_provider": true,
+    "every_scene_need_has_a_team": true,
+    "foreign_keys": true,
+    "incident_counts_match_victims": true,
+    "inside_city": true,
+    "schema_roundtrip": true,
+    "unique_ids": true
+  },
+  "contention": {
+    "ambulance_pairs": [
+      [
+        "INC-01",
+        "INC-02"
+      ],
+      [
+        "INC-01",
+        "INC-03"
+      ],
+      [
+        "INC-02",
+        "INC-03"
+      ],
+      [
+        "INC-02",
+        "INC-05"
+      ],
+      [
+        "INC-03",
+        "INC-05"
+      ],
+      [
+        "INC-03",
+        "INC-06"
+      ],
+      [
+        "INC-03",
+        "INC-07"
+      ],
+      [
+        "INC-03",
+        "INC-08"
+      ],
+      [
+        "INC-05",
+        "INC-06"
+      ],
+      [
+        "INC-05",
+        "INC-07"
+      ],
+      [
+        "INC-05",
+        "INC-08"
+      ],
+      [
+        "INC-05",
+        "INC-09"
+      ],
+      [
+        "INC-05",
+        "INC-10"
+      ],
+      [
+        "INC-06",
+        "INC-07"
+      ],
+      [
+        "INC-06",
+        "INC-08"
+      ],
+      [
+        "INC-06",
+        "INC-09"
+      ],
+      [
+        "INC-06",
+        "INC-10"
+      ],
+      [
+        "INC-07",
+        "INC-08"
+      ],
+      [
+        "INC-07",
+        "INC-09"
+      ],
+      [
+        "INC-07",
+        "INC-10"
+      ],
+      [
+        "INC-08",
+        "INC-09"
+      ],
+      [
+        "INC-08",
+        "INC-10"
+      ],
+      [
+        "INC-09",
+        "INC-10"
+      ]
+    ],
+    "capability_demand": {
+      "trauma_surgery": 6
+    },
+    "n_ambulance_pairs": 23,
+    "nearest_capable_load": {
+      "H1": {
+        "free_er_bays": 5,
+        "red_yellow_nearest_capable": 13
+      },
+      "H2": {
+        "free_er_bays": 1,
+        "red_yellow_nearest_capable": 3
+      },
+      "H3": {
+        "free_er_bays": 1,
+        "red_yellow_nearest_capable": 0
+      }
+    },
+    "red_yellow_needing_single_provider": 0,
+    "single_provider": {}
+  },
+  "counts": {
+    "ambulances": 5,
+    "doctors": 22,
+    "green": 24,
+    "hospitals": 3,
+    "incidents": 10,
+    "needs_icu": 2,
+    "nurses": 32,
+    "red": 3,
+    "responder_teams": 6,
+    "stations": 4,
+    "trapped": 4,
+    "victims": 40,
+    "yellow": 13
+  },
+  "files": {
+    "ambulances.csv": "18908b7b57695e880080ef3fe5e263f18a34380a051d30dbb0896fda9c052f8f",
+    "hospitals.csv": "e696a1ad6573e05e6f25f40ad5819f52436622258e76f446f2d36ef1787961f1",
+    "incidents.csv": "6c291f2c50e041c9e722068b5e44f1ab91a12a3341a557500af578159f3ef779",
+    "responders.csv": "60ee67f7fce2e474b2b6ceea4d867e1b5db83f9ffd512d1b2b77b673f46d95a9",
+    "scenario.json": "5b41ad0be7c85f182716f1132a63e02dc5da8523a036731af4feb9a7d3cb77c3",
+    "staff.csv": "9a0e57732f52aff8dd26059430d715a6fa35f3e03f333947b7665fa13fc7e771",
+    "stations.csv": "12c88114b9a542e2870d72d9cb26d64076b0c500138f6b54a228bbd3981a2769",
+    "travel_times.csv": "8151f12eb4bd8ada3567d91ae2867007ada5160c019bcfc0069c40d63f78453a",
+    "victims.csv": "355c811d7a6c2daa4437bc631b0f97c01f60cd50ed418cc2f46a3c4bc49c974e"
+  },
+  "generator_version": "0.2.0",
+  "libraries": {
+    "faker": "40.43.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pydantic": "2.14.1",
+    "python": "3.13.14"
+  },
+  "pressure": {
+    "ambulance_pressure": 1.091,
+    "doctor_pressure": 0.318,
+    "er_bay_pressure": 1.181,
+    "mean_ambulance_cycle_min": 55.8,
+    "nurse_pressure": 0.449,
+    "red_per_als_unit": 1.0,
+    "specialist_pressure": 0.506
+  },
+  "scenario_id": "highway_pileup-high-s3",
+  "scenario_sha256": "5b41ad0be7c85f182716f1132a63e02dc5da8523a036731af4feb9a7d3cb77c3",
+  "seed": 3,
+  "stress": "high",
+  "theme": "highway_pileup"
+}

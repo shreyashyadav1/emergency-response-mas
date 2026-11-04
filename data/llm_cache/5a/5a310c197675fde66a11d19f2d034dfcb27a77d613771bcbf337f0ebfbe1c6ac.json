@@ -1,0 +1,86 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 67. Contested units: several incidents want the same team this minute (R1, R6). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R1",
+    "unit_type": "fire engine",
+    "bids": [
+     {
+      "incident": "INC-06",
+      "needs": "fire suppression",
+      "value": 0.5863,
+      "priority": 16.1,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "extrication",
+      "value": 0.4828,
+      "priority": 46.6,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-09",
+      "needs": "extrication",
+      "value": 0.6667,
+      "priority": 15.3,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-09",
+      "needs": "fire suppression",
+      "value": 1.3505,
+      "priority": 15.3,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-09"
+   },
+   {
+    "unit": "R6",
+    "unit_type": "paramedic qrv",
+    "bids": [
+     {
+      "incident": "INC-06",
+      "needs": "triage stabilization",
+      "value": 0.2914,
+      "priority": 16.1,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-10",
+      "needs": "triage stabilization",
+      "value": 0.4162,
+      "priority": 20.0,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-11",
+      "needs": "triage stabilization",
+      "value": 0.4953,
+      "priority": 15.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-11"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"R1\",\"incident\":\"INC-09\"},{\"unit\":\"R6\",\"incident\":\"INC-11\"}],\"reason\":\"Maximizing overall survivor value.\"}",
+ "usage": {
+  "requests": 3,
+  "input_tokens": 2931,
+  "output_tokens": 91
+ }
+}

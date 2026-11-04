@@ -1,0 +1,39 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 26. Contested units: several incidents want the same team this minute (R6). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R6",
+    "unit_type": "paramedic qrv",
+    "bids": [
+     {
+      "incident": "INC-04",
+      "needs": "triage stabilization",
+      "value": 0.0649,
+      "priority": 1.6,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "triage stabilization",
+      "value": 0.4511,
+      "priority": 18.7,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-05"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"R6\",\"incident\":\"INC-05\"}],\"reason\":\"INC-05 has a higher value for saving lives.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 974,
+  "output_tokens": 43
+ }
+}

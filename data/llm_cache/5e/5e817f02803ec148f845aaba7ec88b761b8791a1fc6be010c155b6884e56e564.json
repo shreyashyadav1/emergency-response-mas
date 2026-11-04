@@ -1,0 +1,47 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 37. Contested units: several incidents want the same team this minute (R2). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R2",
+    "unit_type": "paramedic qrv",
+    "bids": [
+     {
+      "incident": "INC-04",
+      "needs": "triage stabilization",
+      "value": 0.7875,
+      "priority": 6.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "triage stabilization",
+      "value": 0.5613,
+      "priority": 31.7,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-06",
+      "needs": "triage stabilization",
+      "value": 0.1487,
+      "priority": 3.0,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-04"
+   }
+  ]
+ },
+ "output_text": "{\"awards\": [{\"unit\": \"R2\", \"incident\": \"INC-04\"}], \"reason\": \"INC-04 provides the highest expected value and has no other units available.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1132,
+  "output_tokens": 52
+ }
+}

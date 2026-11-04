@@ -1,0 +1,55 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 74. Contested units: several incidents want the same team this minute (R2). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R2",
+    "unit_type": "paramedic qrv",
+    "bids": [
+     {
+      "incident": "INC-06",
+      "needs": "triage stabilization",
+      "value": 0.2545,
+      "priority": 16.8,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-09",
+      "needs": "triage stabilization",
+      "value": 0.2285,
+      "priority": 3.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-10",
+      "needs": "triage stabilization",
+      "value": 0.2742,
+      "priority": 3.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-11",
+      "needs": "triage stabilization",
+      "value": 0.2109,
+      "priority": 3.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-10"
+   }
+  ]
+ },
+ "output_text": "{\"awards\":[{\"unit\":\"R2\",\"incident\":\"INC-10\"}],\"reason\":\"INC-10 has the highest value for saving lives.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1072,
+  "output_tokens": 43
+ }
+}

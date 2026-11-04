@@ -1,0 +1,2277 @@
+{
+ "ambulances": [
+  {
+   "ambulance_id": "A1",
+   "available_from_min": 0,
+   "base_station_id": "S1",
+   "capacity": 1,
+   "crew_size": 2,
+   "speed_kmh": 55.0,
+   "status": "available",
+   "unit_type": "ALS",
+   "x": 12.378,
+   "y": 12.257
+  },
+  {
+   "ambulance_id": "A2",
+   "available_from_min": 0,
+   "base_station_id": "S2",
+   "capacity": 2,
+   "crew_size": 3,
+   "speed_kmh": 55.0,
+   "status": "available",
+   "unit_type": "BLS",
+   "x": 1.281,
+   "y": 22.667
+  },
+  {
+   "ambulance_id": "A3",
+   "available_from_min": 0,
+   "base_station_id": "S3",
+   "capacity": 2,
+   "crew_size": 3,
+   "speed_kmh": 55.0,
+   "status": "available",
+   "unit_type": "ALS",
+   "x": 22.767,
+   "y": 22.84
+  },
+  {
+   "ambulance_id": "A4",
+   "available_from_min": 0,
+   "base_station_id": "S4",
+   "capacity": 2,
+   "crew_size": 3,
+   "speed_kmh": 55.0,
+   "status": "available",
+   "unit_type": "BLS",
+   "x": 22.228,
+   "y": 1.513
+  },
+  {
+   "ambulance_id": "A5",
+   "available_from_min": 0,
+   "base_station_id": "S1",
+   "capacity": 2,
+   "crew_size": 2,
+   "speed_kmh": 55.0,
+   "status": "available",
+   "unit_type": "ALS",
+   "x": 12.378,
+   "y": 12.257
+  }
+ ],
+ "hospitals": [
+  {
+   "capabilities": [
+    "general_emergency",
+    "trauma_surgery",
+    "neurosurgery",
+    "burn_unit",
+    "cardiac_cath",
+    "toxicology_decon",
+    "critical_care"
+   ],
+   "diversion_threshold": 0.9,
+   "er_bays_occupied": 4,
+   "er_bays_total": 14,
+   "hospital_id": "H1",
+   "icu_beds_free": 6,
+   "icu_beds_total": 12,
+   "max_staff_lend_doctors": 1,
+   "max_staff_lend_nurses": 2,
+   "name": "Harborview Trauma Center",
+   "reserve_bays_for_red": 2,
+   "surge_bays": 5,
+   "trauma_level": 1,
+   "ward_beds_free": 23,
+   "x": 10.994,
+   "y": 14.098,
+   "zone": "core"
+  },
+  {
+   "capabilities": [
+    "general_emergency",
+    "trauma_surgery",
+    "cardiac_cath",
+    "pediatric_emergency",
+    "toxicology_decon",
+    "critical_care"
+   ],
+   "diversion_threshold": 0.85,
+   "er_bays_occupied": 4,
+   "er_bays_total": 10,
+   "hospital_id": "H2",
+   "icu_beds_free": 4,
+   "icu_beds_total": 8,
+   "max_staff_lend_doctors": 1,
+   "max_staff_lend_nurses": 3,
+   "name": "Eastgate Regional Medical Center",
+   "reserve_bays_for_red": 1,
+   "surge_bays": 3,
+   "trauma_level": 2,
+   "ward_beds_free": 14,
+   "x": 9.597,
+   "y": 4.203,
+   "zone": "inner"
+  },
+  {
+   "capabilities": [
+    "general_emergency",
+    "critical_care"
+   ],
+   "diversion_threshold": 0.8,
+   "er_bays_occupied": 2,
+   "er_bays_total": 6,
+   "hospital_id": "H3",
+   "icu_beds_free": 2,
+   "icu_beds_total": 3,
+   "max_staff_lend_doctors": 1,
+   "max_staff_lend_nurses": 2,
+   "name": "Northfield Community Hospital",
+   "reserve_bays_for_red": 0,
+   "surge_bays": 2,
+   "trauma_level": 3,
+   "ward_beds_free": 8,
+   "x": 22.801,
+   "y": 7.316,
+   "zone": "outer"
+  }
+ ],
+ "incidents": [
+  {
+   "hazard": "fire",
+   "incident_id": "INC-01",
+   "incident_type": "building_fire",
+   "min_golden_window_min": 200,
+   "n_green": 3,
+   "n_red": 0,
+   "n_trapped": 1,
+   "n_victims": 4,
+   "n_yellow": 1,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 17
+    },
+    {
+     "capability": "extrication",
+     "min_teams": 1,
+     "work_min": 28
+    },
+    {
+     "capability": "fire_suppression",
+     "min_teams": 1,
+     "work_min": 30
+    }
+   ],
+   "quadrant": "NW",
+   "report": {
+    "confidence": 0.634,
+    "narrative": "Fire alarm and visible fire at a office building on Murray Lane. About 5 people are hurt. No one seems critical yet. Someone is trapped. Flames and smoke are visible.",
+    "report_time_min": 0,
+    "reported_critical": 0,
+    "reported_hazard": "fire",
+    "reported_trapped": true,
+    "reported_victims": 5
+   },
+   "report_time_min": 0,
+   "unsalvageable_on_scene": 1,
+   "urgency_truth": 1.536,
+   "x": 8.037,
+   "y": 13.555,
+   "zone": "core"
+  },
+  {
+   "hazard": "none",
+   "incident_id": "INC-02",
+   "incident_type": "multi_vehicle_accident",
+   "min_golden_window_min": 166,
+   "n_green": 3,
+   "n_red": 0,
+   "n_trapped": 1,
+   "n_victims": 5,
+   "n_yellow": 2,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 10
+    },
+    {
+     "capability": "extrication",
+     "min_teams": 1,
+     "work_min": 38
+    }
+   ],
+   "quadrant": "NE",
+   "report": {
+    "confidence": 0.486,
+    "narrative": "Caller reports a crash involving several vehicles on Alexander Lane. About 5 people are hurt. No one seems critical yet. Someone is trapped.",
+    "report_time_min": 1,
+    "reported_critical": 0,
+    "reported_hazard": "none",
+    "reported_trapped": true,
+    "reported_victims": 5
+   },
+   "report_time_min": 1,
+   "unsalvageable_on_scene": 1,
+   "urgency_truth": 3.057,
+   "x": 19.535,
+   "y": 21.963,
+   "zone": "outer"
+  },
+  {
+   "hazard": "fire",
+   "incident_id": "INC-03",
+   "incident_type": "multi_vehicle_accident",
+   "min_golden_window_min": 694,
+   "n_green": 1,
+   "n_red": 0,
+   "n_trapped": 0,
+   "n_victims": 1,
+   "n_yellow": 0,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 18
+    },
+    {
+     "capability": "fire_suppression",
+     "min_teams": 1,
+     "work_min": 46
+    }
+   ],
+   "quadrant": "SW",
+   "report": {
+    "confidence": 0.745,
+    "narrative": "Caller reports a crash involving several vehicles on Baldwin Street. About 1 person is hurt. No one seems critical yet. Flames and smoke are visible.",
+    "report_time_min": 10,
+    "reported_critical": 0,
+    "reported_hazard": "fire",
+    "reported_trapped": false,
+    "reported_victims": 1
+   },
+   "report_time_min": 10,
+   "unsalvageable_on_scene": 0,
+   "urgency_truth": 0.086,
+   "x": 8.298,
+   "y": 4.978,
+   "zone": "inner"
+  },
+  {
+   "hazard": "none",
+   "incident_id": "INC-04",
+   "incident_type": "crowd_incident",
+   "min_golden_window_min": 60,
+   "n_green": 1,
+   "n_red": 1,
+   "n_trapped": 0,
+   "n_victims": 2,
+   "n_yellow": 0,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 17
+    }
+   ],
+   "quadrant": "NW",
+   "report": {
+    "confidence": 0.732,
+    "narrative": "Heat and crowding at a gathering on Brown Boulevard, many feel faint. About 2 people are hurt. 1 looks badly hurt.",
+    "report_time_min": 11,
+    "reported_critical": 1,
+    "reported_hazard": "none",
+    "reported_trapped": false,
+    "reported_victims": 2
+   },
+   "report_time_min": 11,
+   "unsalvageable_on_scene": 0,
+   "urgency_truth": 10.111,
+   "x": 7.363,
+   "y": 12.972,
+   "zone": "inner"
+  },
+  {
+   "hazard": "fire",
+   "incident_id": "INC-05",
+   "incident_type": "building_fire",
+   "min_golden_window_min": 59,
+   "n_green": 3,
+   "n_red": 1,
+   "n_trapped": 0,
+   "n_victims": 6,
+   "n_yellow": 2,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 12
+    },
+    {
+     "capability": "fire_suppression",
+     "min_teams": 1,
+     "work_min": 47
+    }
+   ],
+   "quadrant": "SW",
+   "report": {
+    "confidence": 0.533,
+    "narrative": "Caller sees flames and heavy smoke from a office building on Weaver Way. About 5 people are hurt. 2 look badly hurt. Flames and smoke are visible.",
+    "report_time_min": 11,
+    "reported_critical": 2,
+    "reported_hazard": "fire",
+    "reported_trapped": false,
+    "reported_victims": 5
+   },
+   "report_time_min": 11,
+   "unsalvageable_on_scene": 0,
+   "urgency_truth": 13.776,
+   "x": 11.121,
+   "y": 7.737,
+   "zone": "core"
+  },
+  {
+   "hazard": "none",
+   "incident_id": "INC-06",
+   "incident_type": "crowd_incident",
+   "min_golden_window_min": 112,
+   "n_green": 1,
+   "n_red": 0,
+   "n_trapped": 0,
+   "n_victims": 2,
+   "n_yellow": 1,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 17
+    }
+   ],
+   "quadrant": "SW",
+   "report": {
+    "confidence": 0.648,
+    "narrative": "Crowd surge at an event on Schwartz Way, people are on the ground. About 1 person is hurt. No one seems critical yet.",
+    "report_time_min": 12,
+    "reported_critical": 0,
+    "reported_hazard": "none",
+    "reported_trapped": false,
+    "reported_victims": 1
+   },
+   "report_time_min": 12,
+   "unsalvageable_on_scene": 0,
+   "urgency_truth": 2.248,
+   "x": 11.827,
+   "y": 4.998,
+   "zone": "inner"
+  },
+  {
+   "hazard": "structural",
+   "incident_id": "INC-07",
+   "incident_type": "structural_collapse",
+   "min_golden_window_min": 29,
+   "n_green": 0,
+   "n_red": 2,
+   "n_trapped": 1,
+   "n_victims": 3,
+   "n_yellow": 1,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 15
+    },
+    {
+     "capability": "extrication",
+     "min_teams": 1,
+     "work_min": 20
+    },
+    {
+     "capability": "structural_rescue",
+     "min_teams": 1,
+     "work_min": 53
+    }
+   ],
+   "quadrant": "SE",
+   "report": {
+    "confidence": 0.874,
+    "narrative": "Part of a apartment block on Hicks Boulevard has collapsed. About 3 people are hurt. 2 look badly hurt. Someone is trapped. Debris is still coming down.",
+    "report_time_min": 18,
+    "reported_critical": 2,
+    "reported_hazard": "structural",
+    "reported_trapped": true,
+    "reported_victims": 3
+   },
+   "report_time_min": 18,
+   "unsalvageable_on_scene": 0,
+   "urgency_truth": 38.675,
+   "x": 18.713,
+   "y": 8.194,
+   "zone": "inner"
+  },
+  {
+   "hazard": "hazmat",
+   "incident_id": "INC-08",
+   "incident_type": "hazmat_release",
+   "min_golden_window_min": 34,
+   "n_green": 0,
+   "n_red": 1,
+   "n_trapped": 0,
+   "n_victims": 2,
+   "n_yellow": 1,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 12
+    },
+    {
+     "capability": "hazmat",
+     "min_teams": 1,
+     "work_min": 39
+    }
+   ],
+   "quadrant": "NE",
+   "report": {
+    "confidence": 0.777,
+    "narrative": "Chemical leak reported near Mccoy Way, caller can smell fumes. About 2 people are hurt. 1 looks badly hurt. There is a strong chemical smell.",
+    "report_time_min": 26,
+    "reported_critical": 1,
+    "reported_hazard": "hazmat",
+    "reported_trapped": false,
+    "reported_victims": 2
+   },
+   "report_time_min": 26,
+   "unsalvageable_on_scene": 0,
+   "urgency_truth": 19.119,
+   "x": 17.723,
+   "y": 19.094,
+   "zone": "outer"
+  },
+  {
+   "hazard": "none",
+   "incident_id": "INC-09",
+   "incident_type": "multi_vehicle_accident",
+   "min_golden_window_min": 222,
+   "n_green": 1,
+   "n_red": 0,
+   "n_trapped": 0,
+   "n_victims": 2,
+   "n_yellow": 1,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 16
+    }
+   ],
+   "quadrant": "SE",
+   "report": {
+    "confidence": 0.813,
+    "narrative": "Chain-reaction collision on Forbes Avenue, caller is standing nearby. About 2 people are hurt. No one seems critical yet.",
+    "report_time_min": 27,
+    "reported_critical": 0,
+    "reported_hazard": "none",
+    "reported_trapped": false,
+    "reported_victims": 2
+   },
+   "report_time_min": 27,
+   "unsalvageable_on_scene": 1,
+   "urgency_truth": 1.231,
+   "x": 12.835,
+   "y": 0.612,
+   "zone": "outer"
+  },
+  {
+   "hazard": "structural",
+   "incident_id": "INC-10",
+   "incident_type": "structural_collapse",
+   "min_golden_window_min": 28,
+   "n_green": 3,
+   "n_red": 2,
+   "n_trapped": 1,
+   "n_victims": 6,
+   "n_yellow": 1,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 15
+    },
+    {
+     "capability": "extrication",
+     "min_teams": 1,
+     "work_min": 27
+    },
+    {
+     "capability": "structural_rescue",
+     "min_teams": 1,
+     "work_min": 90
+    }
+   ],
+   "quadrant": "SW",
+   "report": {
+    "confidence": 0.795,
+    "narrative": "Caller heard a loud bang and a parking garage on Hernandez Street came down. About 5 people are hurt. 2 look badly hurt. Someone is trapped. Debris is still coming down.",
+    "report_time_min": 56,
+    "reported_critical": 2,
+    "reported_hazard": "structural",
+    "reported_trapped": true,
+    "reported_victims": 5
+   },
+   "report_time_min": 56,
+   "unsalvageable_on_scene": 1,
+   "urgency_truth": 33.879,
+   "x": 10.486,
+   "y": 2.19,
+   "zone": "outer"
+  },
+  {
+   "hazard": "none",
+   "incident_id": "INC-11",
+   "incident_type": "crowd_incident",
+   "min_golden_window_min": 94,
+   "n_green": 2,
+   "n_red": 0,
+   "n_trapped": 0,
+   "n_victims": 5,
+   "n_yellow": 3,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 13
+    }
+   ],
+   "quadrant": "SW",
+   "report": {
+    "confidence": 0.724,
+    "narrative": "Several people collapsed in a crowded area on Watts Road. About 5 people are hurt. No one seems critical yet.",
+    "report_time_min": 64,
+    "reported_critical": 0,
+    "reported_hazard": "none",
+    "reported_trapped": false,
+    "reported_victims": 5
+   },
+   "report_time_min": 64,
+   "unsalvageable_on_scene": 0,
+   "urgency_truth": 6.736,
+   "x": 10.365,
+   "y": 6.046,
+   "zone": "inner"
+  },
+  {
+   "hazard": "structural",
+   "incident_id": "INC-12",
+   "incident_type": "structural_collapse",
+   "min_golden_window_min": 99,
+   "n_green": 1,
+   "n_red": 0,
+   "n_trapped": 2,
+   "n_victims": 3,
+   "n_yellow": 2,
+   "needs": [
+    {
+     "capability": "triage_stabilization",
+     "min_teams": 1,
+     "work_min": 11
+    },
+    {
+     "capability": "extrication",
+     "min_teams": 1,
+     "work_min": 39
+    },
+    {
+     "capability": "structural_rescue",
+     "min_teams": 1,
+     "work_min": 87
+    }
+   ],
+   "quadrant": "NW",
+   "report": {
+    "confidence": 0.949,
+    "narrative": "Caller heard a loud bang and a apartment block on Ayala Avenue came down. About 3 people are hurt. No one seems critical yet. Someone is trapped. Debris is still coming down.",
+    "report_time_min": 74,
+    "reported_critical": 0,
+    "reported_hazard": "structural",
+    "reported_trapped": true,
+    "reported_victims": 3
+   },
+   "report_time_min": 74,
+   "unsalvageable_on_scene": 0,
+   "urgency_truth": 3.699,
+   "x": 7.861,
+   "y": 14.786,
+   "zone": "inner"
+  }
+ ],
+ "meta": {
+  "city_km": 24.0,
+  "congestion_profile": [
+   [
+    0.0,
+    90.0,
+    1.0
+   ],
+   [
+    90.0,
+    240.0,
+    1.0
+   ]
+  ],
+  "description": "Mixed urban mass-casualty day: crashes, fires, a collapse, a spill and a crowd event.",
+  "generator_version": "0.2.0",
+  "horizon_min": 240,
+  "scenario_id": "urban_mci-low-s5",
+  "seed": 5,
+  "stress": "low",
+  "theme": "urban_mci"
+ },
+ "responders": [
+  {
+   "available_from_min": 0,
+   "capabilities": [
+    "fire_suppression",
+    "extrication",
+    "triage_stabilization"
+   ],
+   "speed_kmh": 45.0,
+   "station_id": "S1",
+   "status": "available",
+   "team_id": "R1",
+   "team_size": 4,
+   "team_type": "fire_engine",
+   "x": 12.378,
+   "y": 12.257
+  },
+  {
+   "available_from_min": 0,
+   "capabilities": [
+    "triage_stabilization"
+   ],
+   "speed_kmh": 60.0,
+   "station_id": "S2",
+   "status": "available",
+   "team_id": "R2",
+   "team_size": 2,
+   "team_type": "paramedic_qrv",
+   "x": 1.281,
+   "y": 22.667
+  },
+  {
+   "available_from_min": 0,
+   "capabilities": [
+    "structural_rescue",
+    "extrication"
+   ],
+   "speed_kmh": 40.0,
+   "station_id": "S3",
+   "status": "available",
+   "team_id": "R3",
+   "team_size": 6,
+   "team_type": "heavy_rescue",
+   "x": 22.767,
+   "y": 22.84
+  },
+  {
+   "available_from_min": 0,
+   "capabilities": [
+    "hazmat"
+   ],
+   "speed_kmh": 40.0,
+   "station_id": "S4",
+   "status": "available",
+   "team_id": "R4",
+   "team_size": 5,
+   "team_type": "hazmat",
+   "x": 22.228,
+   "y": 1.513
+  },
+  {
+   "available_from_min": 0,
+   "capabilities": [
+    "fire_suppression",
+    "extrication",
+    "triage_stabilization"
+   ],
+   "speed_kmh": 45.0,
+   "station_id": "S1",
+   "status": "available",
+   "team_id": "R5",
+   "team_size": 4,
+   "team_type": "fire_engine",
+   "x": 12.378,
+   "y": 12.257
+  },
+  {
+   "available_from_min": 0,
+   "capabilities": [
+    "triage_stabilization"
+   ],
+   "speed_kmh": 60.0,
+   "station_id": "S2",
+   "status": "available",
+   "team_id": "R6",
+   "team_size": 2,
+   "team_type": "paramedic_qrv",
+   "x": 1.281,
+   "y": 22.667
+  }
+ ],
+ "staff": [
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Dr. William Cooper",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "emergency_medicine",
+   "staff_id": "D01",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Dr. Colton Ramos",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "emergency_medicine",
+   "staff_id": "D02",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": false,
+   "name": "Dr. Nicole Salinas",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "trauma_surgery",
+    "general_emergency"
+   ],
+   "specialty": "trauma_surgeon",
+   "staff_id": "D03",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": false,
+   "name": "Dr. Dawn Lopez",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "trauma_surgery",
+    "general_emergency"
+   ],
+   "specialty": "trauma_surgeon",
+   "staff_id": "D04",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": false,
+   "name": "Dr. Jenna Gardner",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "neurosurgery"
+   ],
+   "specialty": "neurosurgeon",
+   "staff_id": "D05",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "H1",
+   "lendable": false,
+   "name": "Dr. Mary Grant",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "burn_unit"
+   ],
+   "specialty": "burn_specialist",
+   "staff_id": "D06",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": false,
+   "name": "Dr. Alyssa Nguyen",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "cardiac_cath"
+   ],
+   "specialty": "cardiologist",
+   "staff_id": "D07",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": false,
+   "name": "Dr. Yvette Warren",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 125,
+   "role": "doctor",
+   "skills": [
+    "toxicology_decon"
+   ],
+   "specialty": "toxicologist",
+   "staff_id": "D08",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Dr. Steve Howell",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "critical_care"
+   ],
+   "specialty": "intensivist",
+   "staff_id": "D09",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Jared Daniels, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N01",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Christopher Sweeney, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N02",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Lindsey Guzman, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N03",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Jacob Higgins, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N04",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Stephanie Johnson, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency",
+    "trauma_surgery"
+   ],
+   "specialty": "trauma_nurse",
+   "staff_id": "N05",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "James Garrett, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency",
+    "trauma_surgery"
+   ],
+   "specialty": "trauma_nurse",
+   "staff_id": "N06",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Juan Collins, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 126,
+   "role": "nurse",
+   "skills": [
+    "general_emergency",
+    "trauma_surgery"
+   ],
+   "specialty": "trauma_nurse",
+   "staff_id": "N07",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Bruce Mitchell, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N08",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Charles Hines, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 117,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N09",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Laurie Jones, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N10",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": true,
+   "name": "Philip Ramos, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N11",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H1",
+   "lendable": false,
+   "name": "Michael Reyes, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency",
+    "pediatric_emergency"
+   ],
+   "specialty": "pediatric_nurse",
+   "staff_id": "N12",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 2,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Dr. Carlos Mcgee",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "emergency_medicine",
+   "staff_id": "D10",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 2,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Dr. Thomas Robinson",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "emergency_medicine",
+   "staff_id": "D11",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": false,
+   "name": "Dr. Catherine Jones",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "trauma_surgery",
+    "general_emergency"
+   ],
+   "specialty": "trauma_surgeon",
+   "staff_id": "D12",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": false,
+   "name": "Dr. Wanda Gonzales",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "cardiac_cath"
+   ],
+   "specialty": "cardiologist",
+   "staff_id": "D13",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Dr. Alejandro Patel",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "pediatric_emergency",
+    "general_emergency"
+   ],
+   "specialty": "pediatrician",
+   "staff_id": "D14",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": false,
+   "name": "Dr. Ronnie Love",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "toxicology_decon"
+   ],
+   "specialty": "toxicologist",
+   "staff_id": "D15",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Dr. Morgan Cruz",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "critical_care"
+   ],
+   "specialty": "intensivist",
+   "staff_id": "D16",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Heather Davis, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N13",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Melanie Rocha, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N14",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Stacey Mendoza, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N15",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Katie Sosa, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency",
+    "trauma_surgery"
+   ],
+   "specialty": "trauma_nurse",
+   "staff_id": "N16",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Paul Mccarthy, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency",
+    "trauma_surgery"
+   ],
+   "specialty": "trauma_nurse",
+   "staff_id": "N17",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Steven Maddox, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 198,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N18",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Caitlyn Phillips, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N19",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": true,
+   "name": "Jason Roman, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 104,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N20",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H2",
+   "lendable": false,
+   "name": "Lori Bridges, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 94,
+   "role": "nurse",
+   "skills": [
+    "general_emergency",
+    "pediatric_emergency"
+   ],
+   "specialty": "pediatric_nurse",
+   "staff_id": "N21",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 2,
+   "home_hospital": "H3",
+   "lendable": true,
+   "name": "Dr. Mark Haynes",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "emergency_medicine",
+   "staff_id": "D17",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H3",
+   "lendable": true,
+   "name": "Dr. Kimberly Moody",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "emergency_medicine",
+   "staff_id": "D18",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H3",
+   "lendable": true,
+   "name": "Dr. Lawrence Blevins",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "critical_care"
+   ],
+   "specialty": "intensivist",
+   "staff_id": "D19",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 2,
+   "home_hospital": "H3",
+   "lendable": true,
+   "name": "Nicholas Moran, RN",
+   "on_duty_from_min": 49,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N22",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H3",
+   "lendable": true,
+   "name": "Sarah Perkins, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N23",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 2,
+   "home_hospital": "H3",
+   "lendable": true,
+   "name": "Joel Williams, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N24",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 2,
+   "home_hospital": "H3",
+   "lendable": true,
+   "name": "Megan Rice, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N25",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 1,
+   "home_hospital": "H3",
+   "lendable": true,
+   "name": "Misty Stone, RN",
+   "on_duty_from_min": 0,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N26",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": true,
+   "name": "Dr. Melanie Harris",
+   "on_duty_from_min": 17,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "emergency_medicine",
+   "staff_id": "D20",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": false,
+   "name": "Dr. Lisa Mccarthy",
+   "on_duty_from_min": 37,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "trauma_surgery",
+    "general_emergency"
+   ],
+   "specialty": "trauma_surgeon",
+   "staff_id": "D21",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": true,
+   "name": "Dr. Eric Sims",
+   "on_duty_from_min": 32,
+   "on_duty_until_min": 240,
+   "role": "doctor",
+   "skills": [
+    "critical_care"
+   ],
+   "specialty": "intensivist",
+   "staff_id": "D22",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": true,
+   "name": "Teresa Logan, RN",
+   "on_duty_from_min": 37,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N27",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": true,
+   "name": "David Perez, RN",
+   "on_duty_from_min": 23,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N28",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": true,
+   "name": "Jacob Myers, RN",
+   "on_duty_from_min": 27,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency"
+   ],
+   "specialty": "er_nurse",
+   "staff_id": "N29",
+   "workload_limit": 3
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": true,
+   "name": "Jorge Fuller, RN",
+   "on_duty_from_min": 32,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N30",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": true,
+   "name": "Frank Parker, RN",
+   "on_duty_from_min": 40,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "critical_care",
+    "burn_unit",
+    "cardiac_cath",
+    "neurosurgery",
+    "toxicology_decon"
+   ],
+   "specialty": "critical_care_nurse",
+   "staff_id": "N31",
+   "workload_limit": 2
+  },
+  {
+   "baseline_load": 0,
+   "home_hospital": "POOL",
+   "lendable": true,
+   "name": "Lindsey Murray, RN",
+   "on_duty_from_min": 41,
+   "on_duty_until_min": 240,
+   "role": "nurse",
+   "skills": [
+    "general_emergency",
+    "trauma_surgery"
+   ],
+   "specialty": "trauma_nurse",
+   "staff_id": "N32",
+   "workload_limit": 2
+  }
+ ],
+ "stations": [
+  {
+   "name": "Station 1 - NE core",
+   "station_id": "S1",
+   "x": 12.378,
+   "y": 12.257,
+   "zone": "core"
+  },
+  {
+   "name": "Station 2 - NW outer",
+   "station_id": "S2",
+   "x": 1.281,
+   "y": 22.667,
+   "zone": "outer"
+  },
+  {
+   "name": "Station 3 - NE outer",
+   "station_id": "S3",
+   "x": 22.767,
+   "y": 22.84,
+   "zone": "outer"
+  },
+  {
+   "name": "Station 4 - SE outer",
+   "station_id": "S4",
+   "x": 22.228,
+   "y": 1.513,
+   "zone": "outer"
+  }
+ ],
+ "victims": [
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 639,
+   "incident_id": "INC-01",
+   "injury_type": "smoke_inhalation",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 33,
+   "triage": "GREEN",
+   "victim_id": "INC-01-V1"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 615,
+   "incident_id": "INC-01",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 32,
+   "triage": "GREEN",
+   "victim_id": "INC-01-V2"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 415,
+   "incident_id": "INC-01",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 34,
+   "triage": "GREEN",
+   "victim_id": "INC-01-V3"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 200,
+   "incident_id": "INC-01",
+   "injury_type": "smoke_inhalation",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": true,
+   "treatment_min": 85,
+   "triage": "YELLOW",
+   "victim_id": "INC-01-V4"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 550,
+   "incident_id": "INC-02",
+   "injury_type": "head_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 39,
+   "triage": "GREEN",
+   "victim_id": "INC-02-V1"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 328,
+   "incident_id": "INC-02",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 32,
+   "triage": "GREEN",
+   "victim_id": "INC-02-V2"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 682,
+   "incident_id": "INC-02",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 34,
+   "triage": "GREEN",
+   "victim_id": "INC-02-V3"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 166,
+   "incident_id": "INC-02",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 86,
+   "triage": "YELLOW",
+   "victim_id": "INC-02-V4"
+  },
+  {
+   "age_group": "child",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 195,
+   "incident_id": "INC-02",
+   "injury_type": "head_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": true,
+   "treatment_min": 54,
+   "triage": "YELLOW",
+   "victim_id": "INC-02-V5"
+  },
+  {
+   "age_group": "child",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 694,
+   "incident_id": "INC-03",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 26,
+   "triage": "GREEN",
+   "victim_id": "INC-03-V1"
+  },
+  {
+   "age_group": "child",
+   "decay_half_life_min": 25,
+   "doctor_slots": 1,
+   "golden_window_min": 60,
+   "incident_id": "INC-04",
+   "injury_type": "cardiac_event",
+   "needs_icu": true,
+   "nurse_slots": 2,
+   "required_capability": "cardiac_cath",
+   "survival_if_timely": 0.92,
+   "trapped": false,
+   "treatment_min": 107,
+   "triage": "RED",
+   "victim_id": "INC-04-V1"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 542,
+   "incident_id": "INC-04",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 32,
+   "triage": "GREEN",
+   "victim_id": "INC-04-V2"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 458,
+   "incident_id": "INC-05",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 36,
+   "triage": "GREEN",
+   "victim_id": "INC-05-V1"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 331,
+   "incident_id": "INC-05",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 31,
+   "triage": "GREEN",
+   "victim_id": "INC-05-V2"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 234,
+   "incident_id": "INC-05",
+   "injury_type": "burn",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "burn_unit",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 81,
+   "triage": "YELLOW",
+   "victim_id": "INC-05-V3"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 25,
+   "doctor_slots": 1,
+   "golden_window_min": 59,
+   "incident_id": "INC-05",
+   "injury_type": "smoke_inhalation",
+   "needs_icu": true,
+   "nurse_slots": 2,
+   "required_capability": "critical_care",
+   "survival_if_timely": 0.92,
+   "trapped": false,
+   "treatment_min": 137,
+   "triage": "RED",
+   "victim_id": "INC-05-V4"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 112,
+   "incident_id": "INC-05",
+   "injury_type": "burn",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "burn_unit",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 54,
+   "triage": "YELLOW",
+   "victim_id": "INC-05-V5"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 479,
+   "incident_id": "INC-05",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 31,
+   "triage": "GREEN",
+   "victim_id": "INC-05-V6"
+  },
+  {
+   "age_group": "child",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 112,
+   "incident_id": "INC-06",
+   "injury_type": "cardiac_event",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 60,
+   "triage": "YELLOW",
+   "victim_id": "INC-06-V1"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 573,
+   "incident_id": "INC-06",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 32,
+   "triage": "GREEN",
+   "victim_id": "INC-06-V2"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 25,
+   "doctor_slots": 1,
+   "golden_window_min": 36,
+   "incident_id": "INC-07",
+   "injury_type": "head_injury",
+   "needs_icu": true,
+   "nurse_slots": 2,
+   "required_capability": "neurosurgery",
+   "survival_if_timely": 0.92,
+   "trapped": true,
+   "treatment_min": 95,
+   "triage": "RED",
+   "victim_id": "INC-07-V1"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 182,
+   "incident_id": "INC-07",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 63,
+   "triage": "YELLOW",
+   "victim_id": "INC-07-V2"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 25,
+   "doctor_slots": 1,
+   "golden_window_min": 29,
+   "incident_id": "INC-07",
+   "injury_type": "crush_injury",
+   "needs_icu": false,
+   "nurse_slots": 2,
+   "required_capability": "trauma_surgery",
+   "survival_if_timely": 0.92,
+   "trapped": false,
+   "treatment_min": 110,
+   "triage": "RED",
+   "victim_id": "INC-07-V3"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 163,
+   "incident_id": "INC-08",
+   "injury_type": "chemical_exposure",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "toxicology_decon",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 53,
+   "triage": "YELLOW",
+   "victim_id": "INC-08-V1"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 25,
+   "doctor_slots": 1,
+   "golden_window_min": 34,
+   "incident_id": "INC-08",
+   "injury_type": "chemical_exposure",
+   "needs_icu": true,
+   "nurse_slots": 2,
+   "required_capability": "toxicology_decon",
+   "survival_if_timely": 0.92,
+   "trapped": false,
+   "treatment_min": 129,
+   "triage": "RED",
+   "victim_id": "INC-08-V2"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 401,
+   "incident_id": "INC-09",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 28,
+   "triage": "GREEN",
+   "victim_id": "INC-09-V1"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 222,
+   "incident_id": "INC-09",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 54,
+   "triage": "YELLOW",
+   "victim_id": "INC-09-V2"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 25,
+   "doctor_slots": 1,
+   "golden_window_min": 55,
+   "incident_id": "INC-10",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 2,
+   "required_capability": "trauma_surgery",
+   "survival_if_timely": 0.92,
+   "trapped": false,
+   "treatment_min": 120,
+   "triage": "RED",
+   "victim_id": "INC-10-V1"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 323,
+   "incident_id": "INC-10",
+   "injury_type": "crush_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 28,
+   "triage": "GREEN",
+   "victim_id": "INC-10-V2"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 647,
+   "incident_id": "INC-10",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 29,
+   "triage": "GREEN",
+   "victim_id": "INC-10-V3"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 25,
+   "doctor_slots": 1,
+   "golden_window_min": 28,
+   "incident_id": "INC-10",
+   "injury_type": "head_injury",
+   "needs_icu": true,
+   "nurse_slots": 2,
+   "required_capability": "neurosurgery",
+   "survival_if_timely": 0.92,
+   "trapped": true,
+   "treatment_min": 146,
+   "triage": "RED",
+   "victim_id": "INC-10-V4"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 204,
+   "incident_id": "INC-10",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 82,
+   "triage": "YELLOW",
+   "victim_id": "INC-10-V5"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 698,
+   "incident_id": "INC-10",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 27,
+   "triage": "GREEN",
+   "victim_id": "INC-10-V6"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 147,
+   "incident_id": "INC-11",
+   "injury_type": "cardiac_event",
+   "needs_icu": true,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 48,
+   "triage": "YELLOW",
+   "victim_id": "INC-11-V1"
+  },
+  {
+   "age_group": "elderly",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 101,
+   "incident_id": "INC-11",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 82,
+   "triage": "YELLOW",
+   "victim_id": "INC-11-V2"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 94,
+   "incident_id": "INC-11",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": false,
+   "treatment_min": 86,
+   "triage": "YELLOW",
+   "victim_id": "INC-11-V3"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 711,
+   "incident_id": "INC-11",
+   "injury_type": "head_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 33,
+   "triage": "GREEN",
+   "victim_id": "INC-11-V4"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 670,
+   "incident_id": "INC-11",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 26,
+   "triage": "GREEN",
+   "victim_id": "INC-11-V5"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 212,
+   "incident_id": "INC-12",
+   "injury_type": "blunt_trauma",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 0.99,
+   "trapped": true,
+   "treatment_min": 89,
+   "triage": "YELLOW",
+   "victim_id": "INC-12-V1"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 600,
+   "doctor_slots": 0,
+   "golden_window_min": 421,
+   "incident_id": "INC-12",
+   "injury_type": "minor_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "general_emergency",
+   "survival_if_timely": 1.0,
+   "trapped": false,
+   "treatment_min": 23,
+   "triage": "GREEN",
+   "victim_id": "INC-12-V2"
+  },
+  {
+   "age_group": "adult",
+   "decay_half_life_min": 120,
+   "doctor_slots": 1,
+   "golden_window_min": 99,
+   "incident_id": "INC-12",
+   "injury_type": "crush_injury",
+   "needs_icu": false,
+   "nurse_slots": 1,
+   "required_capability": "trauma_surgery",
+   "survival_if_timely": 0.99,
+   "trapped": true,
+   "treatment_min": 53,
+   "triage": "YELLOW",
+   "victim_id": "INC-12-V3"
+  }
+ ]
+}

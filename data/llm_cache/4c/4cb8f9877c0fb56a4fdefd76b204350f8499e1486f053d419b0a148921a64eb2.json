@@ -1,0 +1,38 @@
+{
+ "kind": "routing",
+ "agent": "Dispatch Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 80. Ambulance A4 (BLS) is taking patients from INC-03: YELLOW needing toxicology decon, YELLOW needing toxicology decon.\nHospitals that can treat everyone on board: H2, H1. Choose the order in which to ask them.",
+ "data": {
+  "hospital_options": [
+   {
+    "hospital": "H2",
+    "name": "Eastgate Regional Medical Center",
+    "minutes_to_arrive": 18,
+    "bays_free_now": 1,
+    "bays_expected_free_at_arrival": 2,
+    "patients_already_heading_there": 0,
+    "ambulances_waiting_at_door": 0,
+    "occupancy": 0.9,
+    "bays_held_for_red": 1
+   },
+   {
+    "hospital": "H1",
+    "name": "Harborview Trauma Center",
+    "minutes_to_arrive": 35,
+    "bays_free_now": 4,
+    "bays_expected_free_at_arrival": 3,
+    "patients_already_heading_there": 2,
+    "ambulances_waiting_at_door": 1,
+    "occupancy": 0.79,
+    "bays_held_for_red": 2
+   }
+  ]
+ },
+ "output_text": "{\"ask_order\":[\"H2\",\"H1\"],\"reason\":\"H2 is closer and has bays free now.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 808,
+  "output_tokens": 36
+ }
+}

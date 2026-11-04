@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 4. A 911 call reports a hazmat release (INC-02).\nThe caller's words: \"Unknown vapor cloud near Hodge Street, workers are evacuating. About 3 people are hurt. 1 looks badly hurt. There is a strong chemical smell.\"\nThe caller's counts: 3 hurt, 1 critical, hazard hazmat, someone trapped: no. Caller reliability 0.98 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "hazmat_release",
+   "victims_per_reported": 1.096,
+   "red_per_critical": 0.901,
+   "red_per_other": 0.061,
+   "yellow_of_rest": 0.33,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 1.02,
+   "yellow": 0.75,
+   "green": 1.52,
+   "hazard": "hazmat",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 1.0, \"yellow\": 1.0, \"green\": 1.0, \"hazard\": \"hazmat\", \"trapped\": false, \"reason\": \"Statistical estimate of 3.29 total victims adjusted to integer counts matching the caller's report.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1121,
+  "output_tokens": 83
+ }
+}

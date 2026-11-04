@@ -1,0 +1,7 @@
+team_id,team_type,station_id,x,y,capabilities,team_size,speed_kmh,status,available_from_min
+R1,fire_engine,S1,8.181,11.336,fire_suppression|extrication|triage_stabilization,4,45.0,busy,26
+R2,paramedic_qrv,S2,1.634,1.118,triage_stabilization,2,60.0,available,0
+R3,heavy_rescue,S3,21.772,22.778,structural_rescue|extrication,6,40.0,available,0
+R4,hazmat,S4,21.692,1.569,hazmat,5,40.0,available,0
+R5,fire_engine,S1,12.062,11.859,fire_suppression|extrication|triage_stabilization,4,45.0,available,0
+R6,paramedic_qrv,S2,1.634,1.118,triage_stabilization,2,60.0,available,0

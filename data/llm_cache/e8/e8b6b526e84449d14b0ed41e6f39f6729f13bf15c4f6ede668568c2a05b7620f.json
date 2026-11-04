@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 26. A 911 call reports a building fire (INC-09).\nThe caller's words: \"Fire alarm and visible fire at a school annex on Haas Avenue. Caller thinks maybe 3 people are hurt but cannot be sure. 1 looks badly hurt. Someone is trapped.\"\nThe caller's counts: 3 hurt, 1 critical, hazard unknown, someone trapped: yes. Caller reliability 0.42 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 1.09,
+   "yellow": 0.84,
+   "green": 1.39,
+   "hazard": "fire",
+   "trapped": true
+  }
+ },
+ "output_text": "{\"red\":1.03,\"yellow\":0.79,\"green\":1.26,\"hazard\":\"fire\",\"trapped\":true,\"reason\":\"Caller reported someone is trapped and one person looks badly hurt.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1028,
+  "output_tokens": 86
+ }
+}

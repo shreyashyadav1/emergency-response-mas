@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 20. A 911 call reports a building fire (INC-06).\nThe caller's words: \"Fire reported in a parking garage on Fischer Boulevard. Caller thinks maybe 2 people are hurt but cannot be sure. 1 looks badly hurt. Flames and smoke are visible.\"\nThe caller's counts: 2 hurt, 1 critical, hazard fire, someone trapped: no. Caller reliability 0.18 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "building_fire",
+   "victims_per_reported": 1.104,
+   "red_per_critical": 0.945,
+   "red_per_other": 0.073,
+   "yellow_of_rest": 0.377,
+   "trapped_rate": 0.426
+  },
+  "statistical_estimate": {
+   "red": 1.02,
+   "yellow": 0.45,
+   "green": 0.74,
+   "hazard": "fire",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\": 1.02,\"yellow\": 0.45,\"green\": 0.74,\"hazard\":\"fire\",\"trapped\":false,\"reason\":\"Caller reported visible flames and smoke, indicating a serious situation.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1026,
+  "output_tokens": 89
+ }
+}

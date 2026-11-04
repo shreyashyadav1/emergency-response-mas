@@ -1,0 +1,29 @@
+{
+ "kind": "assessment",
+ "agent": "Incident Assessment Agent",
+ "model": "gpt-4o-mini",
+ "prompt": "Minute 22. A 911 call reports a crowd incident (INC-07).\nThe caller's words: \"Heat and crowding at a gathering on Mcbride Boulevard, many feel faint. About 8 people are hurt. 2 look badly hurt.\"\nThe caller's counts: 8 hurt, 2 critical, hazard none, someone trapped: no. Caller reliability 0.72 (1 is fully reliable).\nEstimate the victims.",
+ "data": {
+  "base_rates": {
+   "incident_type": "crowd_incident",
+   "victims_per_reported": 1.107,
+   "red_per_critical": 0.865,
+   "red_per_other": 0.039,
+   "yellow_of_rest": 0.395,
+   "trapped_rate": 0.0
+  },
+  "statistical_estimate": {
+   "red": 1.96,
+   "yellow": 2.72,
+   "green": 4.17,
+   "hazard": "none",
+   "trapped": false
+  }
+ },
+ "output_text": "{\"red\":2.0,\"yellow\":2.7,\"green\":4.2,\"hazard\":\"none\",\"trapped\":false,\"reason\":\"Caller under-counted victims and misjudged criticality.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1018,
+  "output_tokens": 86
+ }
+}

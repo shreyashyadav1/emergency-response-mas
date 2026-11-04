@@ -1,0 +1,210 @@
+{
+  "checks": {
+    "als_unit_ready_early": true,
+    "arrivals_ordered": true,
+    "capacity_limits": true,
+    "every_need_has_a_provider": true,
+    "every_scene_need_has_a_team": true,
+    "foreign_keys": true,
+    "incident_counts_match_victims": true,
+    "inside_city": true,
+    "schema_roundtrip": true,
+    "unique_ids": true
+  },
+  "contention": {
+    "ambulance_pairs": [
+      [
+        "INC-01",
+        "INC-03"
+      ],
+      [
+        "INC-01",
+        "INC-07"
+      ],
+      [
+        "INC-01",
+        "INC-08"
+      ],
+      [
+        "INC-01",
+        "INC-09"
+      ],
+      [
+        "INC-02",
+        "INC-04"
+      ],
+      [
+        "INC-02",
+        "INC-05"
+      ],
+      [
+        "INC-02",
+        "INC-06"
+      ],
+      [
+        "INC-03",
+        "INC-07"
+      ],
+      [
+        "INC-03",
+        "INC-08"
+      ],
+      [
+        "INC-03",
+        "INC-09"
+      ],
+      [
+        "INC-04",
+        "INC-05"
+      ],
+      [
+        "INC-04",
+        "INC-06"
+      ],
+      [
+        "INC-05",
+        "INC-06"
+      ],
+      [
+        "INC-07",
+        "INC-08"
+      ],
+      [
+        "INC-07",
+        "INC-09"
+      ],
+      [
+        "INC-07",
+        "INC-10"
+      ],
+      [
+        "INC-08",
+        "INC-09"
+      ],
+      [
+        "INC-08",
+        "INC-10"
+      ],
+      [
+        "INC-09",
+        "INC-10"
+      ],
+      [
+        "INC-10",
+        "INC-12"
+      ],
+      [
+        "INC-10",
+        "INC-13"
+      ],
+      [
+        "INC-10",
+        "INC-14"
+      ],
+      [
+        "INC-12",
+        "INC-13"
+      ],
+      [
+        "INC-12",
+        "INC-14"
+      ],
+      [
+        "INC-12",
+        "INC-15"
+      ],
+      [
+        "INC-13",
+        "INC-14"
+      ],
+      [
+        "INC-13",
+        "INC-15"
+      ],
+      [
+        "INC-14",
+        "INC-15"
+      ]
+    ],
+    "capability_demand": {
+      "burn_unit": 4,
+      "neurosurgery": 1,
+      "toxicology_decon": 1,
+      "trauma_surgery": 21
+    },
+    "n_ambulance_pairs": 28,
+    "nearest_capable_load": {
+      "H1": {
+        "free_er_bays": 5,
+        "red_yellow_nearest_capable": 29
+      },
+      "H2": {
+        "free_er_bays": 1,
+        "red_yellow_nearest_capable": 8
+      },
+      "H3": {
+        "free_er_bays": 1,
+        "red_yellow_nearest_capable": 0
+      }
+    },
+    "red_yellow_needing_single_provider": 5,
+    "single_provider": {
+      "burn_unit": {
+        "hospital": "H1",
+        "victims": 4
+      },
+      "neurosurgery": {
+        "hospital": "H1",
+        "victims": 1
+      }
+    }
+  },
+  "counts": {
+    "ambulances": 5,
+    "doctors": 22,
+    "green": 42,
+    "hospitals": 3,
+    "incidents": 15,
+    "needs_icu": 6,
+    "nurses": 32,
+    "red": 12,
+    "responder_teams": 6,
+    "stations": 4,
+    "trapped": 15,
+    "victims": 79,
+    "yellow": 25
+  },
+  "files": {
+    "ambulances.csv": "18908b7b57695e880080ef3fe5e263f18a34380a051d30dbb0896fda9c052f8f",
+    "hospitals.csv": "e696a1ad6573e05e6f25f40ad5819f52436622258e76f446f2d36ef1787961f1",
+    "incidents.csv": "f38467da4ec0f63288865ac4a8b58cb1aa1f21b6d83835c5f0dad81068a357a5",
+    "responders.csv": "60ee67f7fce2e474b2b6ceea4d867e1b5db83f9ffd512d1b2b77b673f46d95a9",
+    "scenario.json": "e76d21fa77486c2e294f201d082f3cca03bf47342f72354303d3a5bb4cc5d114",
+    "staff.csv": "9a0e57732f52aff8dd26059430d715a6fa35f3e03f333947b7665fa13fc7e771",
+    "stations.csv": "12c88114b9a542e2870d72d9cb26d64076b0c500138f6b54a228bbd3981a2769",
+    "travel_times.csv": "1ed0538135cd3dc826f7a83c2d92ae57cc38f1f52800ebf98412f75dea1f181b",
+    "victims.csv": "c9e76f49ab073d9bf01ffb71d3c92533cc48969d253c8ed99aa1fac84864301c"
+  },
+  "generator_version": "0.2.0",
+  "libraries": {
+    "faker": "40.43.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pydantic": "2.14.1",
+    "python": "3.13.14"
+  },
+  "pressure": {
+    "ambulance_pressure": 2.223,
+    "doctor_pressure": 0.75,
+    "er_bay_pressure": 2.552,
+    "mean_ambulance_cycle_min": 54.4,
+    "nurse_pressure": 1.092,
+    "red_per_als_unit": 4.0,
+    "specialist_pressure": 1.675
+  },
+  "scenario_id": "earthquake-high-s3",
+  "scenario_sha256": "e76d21fa77486c2e294f201d082f3cca03bf47342f72354303d3a5bb4cc5d114",
+  "seed": 3,
+  "stress": "high",
+  "theme": "earthquake"
+}

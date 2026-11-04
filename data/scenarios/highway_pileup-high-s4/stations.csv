@@ -1,0 +1,5 @@
+station_id,name,x,y,zone
+S1,Station 1 - NE core,12.481,13.028,core
+S2,Station 2 - SE outer,22.82,1.02,outer
+S3,Station 3 - SW outer,1.356,1.815,outer
+S4,Station 4 - NW outer,2.457,22.875,outer

@@ -1,0 +1,55 @@
+{
+ "kind": "conflict",
+ "agent": "Resource Allocation Agent",
+ "model": "gemini-3.5-flash-lite",
+ "prompt": "Minute 47. Contested units: several incidents want the same team this minute (R5). Award each contested unit to one incident.",
+ "data": {
+  "contested_units": [
+   {
+    "unit": "R5",
+    "unit_type": "fire engine",
+    "bids": [
+     {
+      "incident": "INC-03",
+      "needs": "triage stabilization",
+      "value": 0.57,
+      "priority": 17.0,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-05",
+      "needs": "triage stabilization",
+      "value": 0.2969,
+      "priority": 5.4,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-07",
+      "needs": "triage stabilization",
+      "value": 0.8286,
+      "priority": 31.7,
+      "best_other_unit": null,
+      "its_value": 0.0
+     },
+     {
+      "incident": "INC-08",
+      "needs": "triage stabilization",
+      "value": 0.2493,
+      "priority": 3.5,
+      "best_other_unit": null,
+      "its_value": 0.0
+     }
+    ],
+    "optimizer_pick": "INC-07"
+   }
+  ]
+ },
+ "output_text": "{\"awards\": [{\"unit\": \"R5\", \"incident\": \"INC-07\"}], \"reason\": \"INC-07 yields the highest expected survival value for unit R5.\"}",
+ "usage": {
+  "requests": 2,
+  "input_tokens": 1184,
+  "output_tokens": 51
+ }
+}

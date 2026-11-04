@@ -1,0 +1,741 @@
+{
+  "calibration": {
+    "scenarios": 1800,
+    "scenarios_with_a_failed_check": 0,
+    "seeds_per_setting": 200,
+    "settings": 9
+  },
+  "caller_undercount_share": 0.093,
+  "example_thread": {
+    "rows": [
+      {
+        "action": {
+          "condition": null,
+          "hospital_id": "H1",
+          "kind": "admit",
+          "staff_id": null,
+          "unit_id": "A5"
+        },
+        "recipient": "hospital:H1",
+        "round": 1,
+        "sender": "dispatch",
+        "text": "A5 bringing RED, GREEN, ETA 32 min",
+        "type": "admission_request"
+      },
+      {
+        "action": {
+          "condition": "staff:nurse:trauma_surgery",
+          "hospital_id": "H1",
+          "kind": "counter",
+          "staff_id": null,
+          "unit_id": "A5"
+        },
+        "recipient": "dispatch",
+        "round": 1,
+        "sender": "hospital:H1",
+        "text": "a bay is free but no nurse for trauma_surgery",
+        "type": "counter_proposal"
+      },
+      {
+        "action": {
+          "condition": "nurse:trauma_surgery",
+          "hospital_id": "H1",
+          "kind": "lend_staff",
+          "staff_id": null,
+          "unit_id": null
+        },
+        "recipient": "hospital:H2",
+        "round": 2,
+        "sender": "resource_allocation",
+        "text": "H1 needs a nurse who can handle trauma_surgery",
+        "type": "staff_request"
+      },
+      {
+        "action": {
+          "condition": null,
+          "hospital_id": "H1",
+          "kind": "lend_staff",
+          "staff_id": "N17",
+          "unit_id": null
+        },
+        "recipient": "resource_allocation",
+        "round": 2,
+        "sender": "hospital:H2",
+        "text": "can lend N17 (trauma_nurse)",
+        "type": "staff_offer"
+      },
+      {
+        "action": {
+          "condition": null,
+          "hospital_id": "H1",
+          "kind": "admit",
+          "staff_id": "N32",
+          "unit_id": "A5"
+        },
+        "recipient": "hospital:H1",
+        "round": 3,
+        "sender": "resource_allocation",
+        "text": "agreed: H1 accepts if N32 (trauma_nurse) comes from the regional pool",
+        "type": "allocation_decision"
+      },
+      {
+        "action": {
+          "condition": null,
+          "hospital_id": "H1",
+          "kind": "set_destination",
+          "staff_id": null,
+          "unit_id": "A5"
+        },
+        "recipient": "dispatch",
+        "round": 3,
+        "sender": "resource_allocation",
+        "text": "H1 accepts if N32 (trauma_nurse) comes from the regional pool",
+        "type": "allocation_decision"
+      }
+    ],
+    "seed": 2,
+    "stress": "medium",
+    "t": 26,
+    "theme": "urban_mci",
+    "unit": "A5"
+  },
+  "library": {
+    "total": 26,
+    "verified": 26
+  },
+  "results": {
+    "assessment": {
+      "agent_rank_corr": 0.805,
+      "agent_red_bias": 0.035,
+      "agent_victims_bias": 0.01,
+      "agent_victims_rmse": 0.702,
+      "report_rank_corr": 0.806,
+      "report_red_bias": -0.115,
+      "report_victims_bias": -0.418,
+      "report_victims_rmse": 0.793
+    },
+    "by_stress": {
+      "high": {
+        "best_baseline": "B1",
+        "gain_vs_b0": {
+          "B1": 0.23,
+          "M1": 0.95,
+          "M2": 2.23
+        },
+        "m2_vs_b0_survivors": {
+          "better_share": 1.0,
+          "ci_high": 2.541,
+          "ci_low": 1.922,
+          "diff": 2.234,
+          "p": 1.862645149230957e-09
+        },
+        "m2_vs_best": {
+          "better_share": 0.967,
+          "ci_high": 0.078,
+          "ci_low": 0.049,
+          "diff": 0.064,
+          "p": 1.30385160446167e-08
+        },
+        "m2_vs_best_survivors": {
+          "better_share": 1.0,
+          "ci_high": 2.373,
+          "ci_low": 1.625,
+          "diff": 2.002,
+          "p": 1.862645149230957e-09
+        },
+        "means": {
+          "B0": {
+            "ambulance_utilization": 0.996,
+            "expected_survivors": 49.917,
+            "mean_first_response_min": 56.267,
+            "ramp_wait_min": 239.0,
+            "red_survivors": 0.592,
+            "unserved_critical_incidents": 6.4,
+            "victims_served": 15.433,
+            "weighted_survival": 0.468
+          },
+          "B1": {
+            "ambulance_utilization": 0.996,
+            "expected_survivors": 50.149,
+            "mean_first_response_min": 58.09,
+            "ramp_wait_min": 177.267,
+            "red_survivors": 0.969,
+            "unserved_critical_incidents": 6.467,
+            "victims_served": 16.1,
+            "weighted_survival": 0.483
+          },
+          "M1": {
+            "ambulance_utilization": 0.98,
+            "expected_survivors": 50.872,
+            "mean_first_response_min": 55.157,
+            "ramp_wait_min": 118.133,
+            "red_survivors": 1.416,
+            "unserved_critical_incidents": 5.733,
+            "victims_served": 23.333,
+            "weighted_survival": 0.508
+          },
+          "M2": {
+            "ambulance_utilization": 0.981,
+            "expected_survivors": 52.151,
+            "mean_first_response_min": 45.167,
+            "ramp_wait_min": 107.167,
+            "red_survivors": 2.081,
+            "unserved_critical_incidents": 4.733,
+            "victims_served": 26.967,
+            "weighted_survival": 0.546
+          }
+        },
+        "negotiation": {
+          "better_share": 0.933,
+          "ci_high": 0.049,
+          "ci_low": 0.028,
+          "diff": 0.039,
+          "p": 8.009374141693115e-08
+        }
+      },
+      "low": {
+        "best_baseline": "B1",
+        "gain_vs_b0": {
+          "B1": 0.29,
+          "M1": 0.84,
+          "M2": 1.46
+        },
+        "m2_vs_b0_survivors": {
+          "better_share": 0.967,
+          "ci_high": 1.755,
+          "ci_low": 1.158,
+          "diff": 1.457,
+          "p": 3.725290298461914e-09
+        },
+        "m2_vs_best": {
+          "better_share": 0.8,
+          "ci_high": 0.089,
+          "ci_low": 0.045,
+          "diff": 0.067,
+          "p": 5.973502993583679e-06
+        },
+        "m2_vs_best_survivors": {
+          "better_share": 0.8,
+          "ci_high": 1.547,
+          "ci_low": 0.794,
+          "diff": 1.165,
+          "p": 2.7623027563095093e-06
+        },
+        "means": {
+          "B0": {
+            "ambulance_utilization": 0.974,
+            "expected_survivors": 31.911,
+            "mean_first_response_min": 43.157,
+            "ramp_wait_min": 58.1,
+            "red_survivors": 1.085,
+            "unserved_critical_incidents": 2.0,
+            "victims_served": 28.033,
+            "weighted_survival": 0.601
+          },
+          "B1": {
+            "ambulance_utilization": 0.981,
+            "expected_survivors": 32.203,
+            "mean_first_response_min": 43.52,
+            "ramp_wait_min": 29.267,
+            "red_survivors": 1.56,
+            "unserved_critical_incidents": 1.233,
+            "victims_served": 26.8,
+            "weighted_survival": 0.632
+          },
+          "M1": {
+            "ambulance_utilization": 0.947,
+            "expected_survivors": 32.746,
+            "mean_first_response_min": 39.747,
+            "ramp_wait_min": 26.367,
+            "red_survivors": 1.93,
+            "unserved_critical_incidents": 0.8,
+            "victims_served": 30.333,
+            "weighted_survival": 0.665
+          },
+          "M2": {
+            "ambulance_utilization": 0.937,
+            "expected_survivors": 33.369,
+            "mean_first_response_min": 32.303,
+            "ramp_wait_min": 28.033,
+            "red_survivors": 2.325,
+            "unserved_critical_incidents": 0.8,
+            "victims_served": 32.367,
+            "weighted_survival": 0.699
+          }
+        },
+        "negotiation": {
+          "better_share": 0.8,
+          "ci_high": 0.05,
+          "ci_low": 0.02,
+          "diff": 0.034,
+          "p": 0.00023163668811321259
+        }
+      },
+      "medium": {
+        "best_baseline": "B1",
+        "gain_vs_b0": {
+          "B1": 0.38,
+          "M1": 1.01,
+          "M2": 1.72
+        },
+        "m2_vs_b0_survivors": {
+          "better_share": 0.933,
+          "ci_high": 2.153,
+          "ci_low": 1.296,
+          "diff": 1.725,
+          "p": 1.0244548320770264e-07
+        },
+        "m2_vs_best": {
+          "better_share": 0.867,
+          "ci_high": 0.074,
+          "ci_low": 0.038,
+          "diff": 0.056,
+          "p": 5.144625902175903e-06
+        },
+        "m2_vs_best_survivors": {
+          "better_share": 0.867,
+          "ci_high": 1.686,
+          "ci_low": 0.992,
+          "diff": 1.341,
+          "p": 3.1478703022003174e-07
+        },
+        "means": {
+          "B0": {
+            "ambulance_utilization": 0.992,
+            "expected_survivors": 41.022,
+            "mean_first_response_min": 46.88,
+            "ramp_wait_min": 162.9,
+            "red_survivors": 1.082,
+            "unserved_critical_incidents": 4.3,
+            "victims_served": 23.333,
+            "weighted_survival": 0.524
+          },
+          "B1": {
+            "ambulance_utilization": 0.992,
+            "expected_survivors": 41.405,
+            "mean_first_response_min": 47.443,
+            "ramp_wait_min": 89.7,
+            "red_survivors": 1.49,
+            "unserved_critical_incidents": 4.4,
+            "victims_served": 22.1,
+            "weighted_survival": 0.543
+          },
+          "M1": {
+            "ambulance_utilization": 0.981,
+            "expected_survivors": 42.035,
+            "mean_first_response_min": 45.347,
+            "ramp_wait_min": 72.767,
+            "red_survivors": 1.969,
+            "unserved_critical_incidents": 3.267,
+            "victims_served": 27.367,
+            "weighted_survival": 0.574
+          },
+          "M2": {
+            "ambulance_utilization": 0.981,
+            "expected_survivors": 42.746,
+            "mean_first_response_min": 36.033,
+            "ramp_wait_min": 69.633,
+            "red_survivors": 2.269,
+            "unserved_critical_incidents": 2.967,
+            "victims_served": 31.233,
+            "weighted_survival": 0.599
+          }
+        },
+        "negotiation": {
+          "better_share": 0.7,
+          "ci_high": 0.037,
+          "ci_low": 0.013,
+          "diff": 0.025,
+          "p": 0.0005054883658885956
+        }
+      }
+    },
+    "negotiation_per_run": {
+      "diversions": 0.2,
+      "messages": 249.0,
+      "messages_admission_request": 43.4,
+      "messages_allocation_decision": 63.5,
+      "messages_conflict_notice": 27.9,
+      "messages_counter_proposal": 16.3,
+      "messages_staff_request": 15.6,
+      "staff_moves": 9.3,
+      "surges_opened": 2.4
+    },
+    "other_themes": {
+      "earthquake/high": {
+        "B0": 0.383,
+        "B1": 0.384,
+        "M1": 0.407,
+        "M2": 0.43
+      },
+      "highway_pileup/high": {
+        "B0": 0.487,
+        "B1": 0.51,
+        "M1": 0.54,
+        "M2": 0.584
+      }
+    },
+    "runs": 600,
+    "seeds": 30,
+    "settings": 5
+  },
+  "showcase": {
+    "ambulance_pairs": 13,
+    "ambulances": [
+      {
+        "capacity": 2,
+        "id": "A1",
+        "station": "S1",
+        "status": "available",
+        "type": "ALS"
+      },
+      {
+        "capacity": 2,
+        "id": "A2",
+        "station": "S2",
+        "status": "available",
+        "type": "BLS"
+      },
+      {
+        "capacity": 1,
+        "id": "A3",
+        "station": "S3",
+        "status": "available",
+        "type": "ALS"
+      },
+      {
+        "capacity": 2,
+        "id": "A4",
+        "station": "S4",
+        "status": "busy",
+        "type": "BLS"
+      },
+      {
+        "capacity": 2,
+        "id": "A5",
+        "station": "S1",
+        "status": "busy",
+        "type": "ALS"
+      }
+    ],
+    "checks_passed": 10,
+    "checks_total": 10,
+    "compared_seeds": 200,
+    "counts": {
+      "ambulances": 5,
+      "doctors": 22,
+      "green": 29,
+      "hospitals": 3,
+      "incidents": 12,
+      "needs_icu": 6,
+      "nurses": 32,
+      "red": 8,
+      "responder_teams": 6,
+      "stations": 4,
+      "trapped": 6,
+      "victims": 51,
+      "yellow": 14
+    },
+    "first_call_min": 0,
+    "hospitals": [
+      {
+        "capabilities": [
+          "general_emergency",
+          "trauma_surgery",
+          "neurosurgery",
+          "burn_unit",
+          "cardiac_cath",
+          "toxicology_decon",
+          "critical_care"
+        ],
+        "er_free": 7,
+        "er_total": 14,
+        "icu_free": 3,
+        "id": "H1",
+        "level": 1,
+        "name": "Harborview Trauma Center"
+      },
+      {
+        "capabilities": [
+          "general_emergency",
+          "trauma_surgery",
+          "cardiac_cath",
+          "pediatric_emergency",
+          "toxicology_decon",
+          "critical_care"
+        ],
+        "er_free": 4,
+        "er_total": 10,
+        "icu_free": 3,
+        "id": "H2",
+        "level": 2,
+        "name": "Eastgate Regional Medical Center"
+      },
+      {
+        "capabilities": [
+          "general_emergency",
+          "critical_care"
+        ],
+        "er_free": 2,
+        "er_total": 6,
+        "icu_free": 1,
+        "id": "H3",
+        "level": 3,
+        "name": "Northfield Community Hospital"
+      }
+    ],
+    "incident_types": [
+      "building_fire",
+      "crowd_incident",
+      "hazmat_release",
+      "multi_vehicle_accident",
+      "structural_collapse"
+    ],
+    "incident_zone_counts": {
+      "core": 3,
+      "inner": 6,
+      "outer": 3
+    },
+    "last_call_min": 65,
+    "map": {
+      "center": [
+        12.0,
+        12.0
+      ],
+      "city_km": 24.0,
+      "hospitals": [
+        {
+          "bays": 14,
+          "id": "H1",
+          "x": 11.493,
+          "y": 10.237
+        },
+        {
+          "bays": 10,
+          "id": "H2",
+          "x": 19.231,
+          "y": 16.155
+        },
+        {
+          "bays": 6,
+          "id": "H3",
+          "x": 23.5,
+          "y": 7.719
+        }
+      ],
+      "incidents": [
+        {
+          "id": "INC-01",
+          "victims": 4,
+          "worst": "YELLOW",
+          "x": 7.637,
+          "y": 12.116
+        },
+        {
+          "id": "INC-02",
+          "victims": 4,
+          "worst": "RED",
+          "x": 12.763,
+          "y": 13.081
+        },
+        {
+          "id": "INC-03",
+          "victims": 7,
+          "worst": "RED",
+          "x": 16.88,
+          "y": 3.697
+        },
+        {
+          "id": "INC-04",
+          "victims": 4,
+          "worst": "RED",
+          "x": 11.414,
+          "y": 14.073
+        },
+        {
+          "id": "INC-05",
+          "victims": 5,
+          "worst": "RED",
+          "x": 10.97,
+          "y": 3.653
+        },
+        {
+          "id": "INC-06",
+          "victims": 5,
+          "worst": "YELLOW",
+          "x": 5.978,
+          "y": 4.334
+        },
+        {
+          "id": "INC-07",
+          "victims": 1,
+          "worst": "GREEN",
+          "x": 6.584,
+          "y": 9.23
+        },
+        {
+          "id": "INC-08",
+          "victims": 7,
+          "worst": "RED",
+          "x": 4.681,
+          "y": 7.036
+        },
+        {
+          "id": "INC-09",
+          "victims": 1,
+          "worst": "GREEN",
+          "x": 4.609,
+          "y": 10.964
+        },
+        {
+          "id": "INC-10",
+          "victims": 5,
+          "worst": "RED",
+          "x": 11.859,
+          "y": 0.5
+        },
+        {
+          "id": "INC-11",
+          "victims": 3,
+          "worst": "YELLOW",
+          "x": 3.853,
+          "y": 11.244
+        },
+        {
+          "id": "INC-12",
+          "victims": 5,
+          "worst": "YELLOW",
+          "x": 11.102,
+          "y": 4.269
+        }
+      ],
+      "zone_radii_km": [
+        4.5,
+        9.0
+      ]
+    },
+    "nearest_capable_load": {
+      "H1": {
+        "free_er_bays": 7,
+        "red_yellow_nearest_capable": 22
+      },
+      "H2": {
+        "free_er_bays": 4,
+        "red_yellow_nearest_capable": 0
+      },
+      "H3": {
+        "free_er_bays": 2,
+        "red_yellow_nearest_capable": 0
+      }
+    },
+    "nearest_station_counts": {
+      "S1": 6,
+      "S4": 6
+    },
+    "pressure": {
+      "ambulance_pressure": 1.421,
+      "doctor_pressure": 0.393,
+      "er_bay_pressure": 0.904,
+      "mean_ambulance_cycle_min": 53.3,
+      "nurse_pressure": 0.463,
+      "red_per_als_unit": 2.667,
+      "specialist_pressure": 1.458
+    },
+    "red_yellow_needing_single_provider": 5,
+    "red_yellow_total": 22,
+    "scenario_id": "urban_mci-medium-s78",
+    "seed": 78,
+    "single_provider": {
+      "burn_unit": {
+        "hospital": "H1",
+        "victims": 4
+      },
+      "neurosurgery": {
+        "hospital": "H1",
+        "victims": 1
+      }
+    },
+    "staff": {
+      "doctors": 22,
+      "nurses": 32,
+      "pool": 9
+    }
+  },
+  "showcase_runs": {
+    "B0": {
+      "ambulance_utilization": 1.0,
+      "expected_survivors": 42.921,
+      "mean_first_response_min": 45.8,
+      "ramp_wait_min": 118,
+      "red_survivors": 1.13,
+      "unserved_critical_incidents": 3,
+      "victims_served": 25,
+      "weighted_survival": 0.5543
+    },
+    "M2": {
+      "ambulance_utilization": 0.993,
+      "expected_survivors": 43.196,
+      "mean_first_response_min": 49.4,
+      "ramp_wait_min": 0,
+      "red_survivors": 0.562,
+      "unserved_critical_incidents": 4,
+      "victims_served": 30,
+      "weighted_survival": 0.5403
+    }
+  },
+  "stress_knob_urban": {
+    "high": {
+      "ambulance_pressure": {
+        "p10": 1.56,
+        "p50": 1.91,
+        "p90": 2.33
+      },
+      "er_bay_pressure": {
+        "p10": 1.42,
+        "p50": 1.98,
+        "p90": 2.84
+      },
+      "specialist_pressure": {
+        "p10": 1.0,
+        "p50": 1.74,
+        "p90": 3.34
+      }
+    },
+    "low": {
+      "ambulance_pressure": {
+        "p10": 0.77,
+        "p50": 0.92,
+        "p90": 1.15
+      },
+      "er_bay_pressure": {
+        "p10": 0.36,
+        "p50": 0.46,
+        "p90": 0.58
+      },
+      "specialist_pressure": {
+        "p10": 0.52,
+        "p50": 0.95,
+        "p90": 1.99
+      }
+    },
+    "medium": {
+      "ambulance_pressure": {
+        "p10": 1.1,
+        "p50": 1.4,
+        "p90": 1.73
+      },
+      "er_bay_pressure": {
+        "p10": 0.73,
+        "p50": 0.98,
+        "p90": 1.24
+      },
+      "specialist_pressure": {
+        "p10": 0.66,
+        "p50": 1.39,
+        "p90": 2.65
+      }
+    }
+  },
+  "tests": 40,
+  "travel_pairs": 174
+}
