@@ -175,13 +175,14 @@ def agents_panel(t: int) -> None:
     if not cards:
         st.info(f"{a.label} has no agents and sends no messages. Pick M1 or M2 as the policy to see the agents at work.")
         return
-    st.caption(f"Status lines and the latest messages of {a.label} at minute {t}.")
+    st.caption(f"Status lines, pending work and the latest messages of {a.label} at minute {t}.")
     for row in range(0, len(cards), 3):
         for col, card in zip(st.columns(3), cards[row:row + 3]):
             with col.container(border=True):
                 st.markdown(f"**{card['name']}**")
                 st.caption(card["job"])
                 st.markdown(card["status"])
+                st.markdown("**Pending:** " + ("; ".join(card["pending"]) if card["pending"] else "nothing"))
                 st.caption(f"Sent {card['sent']}, received {card['received']} so far")
                 for m in card["recent"][:2]:
                     st.caption(f"min {m['t']}, {m['direction']} {m['other']}. {m['type']}: {m['text']}")

@@ -90,6 +90,23 @@ def test_agent_cards_only_for_agent_policies(m2, b0):
     assert b0.agents(120) == [] and b0.threads == []
 
 
+def test_agent_cards_show_what_is_pending(m2):
+    for t in (15, 45, 90, 150):
+        tick, cards = m2.tick(t), {c["id"]: c for c in m2.agents(t)}
+        pending = m2.pending(t, most=99)
+        assert all(isinstance(c["pending"], list) for c in cards.values())
+        for h in tick["hospitals"]:
+            door = [u["id"] for u in tick["ambulances"] if u["status"] == "at_door" and u["hospital"] == h["id"]]
+            assert all(u in " ".join(pending[f"hospital:{h['id']}"]) for u in door)
+    first_call = min(e["t"] for e in m2.events if e["kind"] == "call")
+    assert m2.pending(first_call)["incident_assessment"]                 # nobody is on scene at the first call yet
+    moves = [e for e in m2.events if e["kind"] == "staff_assigned" and e["arrives"] > e["t"]]
+    assert moves, "this scenario moves staff"
+    e = moves[0]
+    assert any(e["staff"] in line for line in m2.pending(e["t"], most=99)["resource_allocation"])
+    assert not any(e["staff"] in line for line in m2.pending(e["arrives"], most=99)["resource_allocation"])
+
+
 def test_comparison_and_seed_context(m2, b0):
     assert list(R.compare_outcomes(m2, b0).columns) == ["Outcome", "M2", "B0", "Difference"]
     runs = pd.DataFrame({"theme": "urban_mci", "stress": "high", "seed": [1, 1, 2, 2, 3, 3], "policy": ["M2", "B0"] * 3,

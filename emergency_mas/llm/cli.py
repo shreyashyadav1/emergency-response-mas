@@ -23,6 +23,7 @@ except ImportError:                     # Windows: no file locks, so run one `ru
 import pandas as pd
 from agents import Agent, ModelSettings, RunContextWrapper, Runner, function_tool
 from pydantic import BaseModel
+from scipy.stats import wilcoxon
 
 from .. import params as P
 from ..datagen import generate_scenario
@@ -177,26 +178,30 @@ def build_report(runs_path: Path = RUNS_CSV, out: Path = REPORT) -> str:
          "M3 is M2 with its judgment calls made by OpenAI Agents SDK agents on a language model: the assessment of each new "
          "call, the order of hospitals to ask, a hospital's choice between a counter-offer and a refusal, contested unit "
          "awards and admission settlements. Everything else, including every check on the agents' actions, is the same as "
-         "M2. M2 and B0 are recomputed here on the same seeds.", ""]
+         "M2. M2, M1, B1 and B0 are recomputed here on the same seeds.", ""]
     for (theme, stress, model), g in llm.groupby(["theme", "stress", "model"]):
-        rows, diffs_m2, diffs_b0 = [], [], []
+        rows, diffs = [], {p: [] for p in ("M2", "M1", "B1", "B0")}
         for r in g.sort_values("seed").itertuples():
-            other = {p: run_one(theme, stress, int(r.seed), p)[0] for p in ("M2", "B0")}
-            diffs_m2.append(r.weighted_survival - other["M2"]["weighted_survival"])
-            diffs_b0.append(r.weighted_survival - other["B0"]["weighted_survival"])
+            other = {p: run_one(theme, stress, int(r.seed), p)[0] for p in diffs}
+            for p, d in diffs.items():
+                d.append(r.weighted_survival - other[p]["weighted_survival"])
             rows.append(f"| {int(r.seed)} | {r.weighted_survival:.3f} | {other['M2']['weighted_survival']:.3f} | "
-                        f"{other['B0']['weighted_survival']:.3f} | {diffs_m2[-1]:+.3f} | {diffs_b0[-1]:+.3f} | "
+                        f"{other['B0']['weighted_survival']:.3f} | {diffs['M2'][-1]:+.3f} | {diffs['B0'][-1]:+.3f} | "
                         f"{r.red_survivors:.2f} | {other['M2']['red_survivors']:.2f} | {r.victims_served:.0f} | "
                         f"{other['M2']['victims_served']:.0f} | {int(r.llm_decisions)} | {int(r.llm_fallbacks)} |")
         L += [f"## {theme} / {stress}, model `{model}`", "",
               "| Seed | M3 weighted survival | M2 | B0 | M3 minus M2 | M3 minus B0 | M3 RED survivors | M2 RED survivors | "
               "M3 victims reaching care | M2 | LLM decisions | Fell back to rules |",
               "|---|---|---|---|---|---|---|---|---|---|---|---|", *rows, ""]
-        for name, d in (("M3 minus M2", diffs_m2), ("M3 minus B0", diffs_b0)):
+        for p, d in diffs.items():
             lo, hi = bootstrap_ci(d)
-            better = sum(x > 0 for x in d)
-            L.append(f"- {name}, weighted survival: mean {sum(d) / len(d):+.3f} [{lo:+.3f}, {hi:+.3f}], "
-                     f"M3 better on {better} of {len(d)} seeds.")
+            better, equal = sum(x > 1e-12 for x in d), sum(abs(x) <= 1e-12 for x in d)
+            try:
+                pv = f"{wilcoxon(d).pvalue:.1g}" if better + equal < len(d) or better else "1"
+            except ValueError:                  # every difference is zero
+                pv = "1"
+            L.append(f"- M3 minus {p}, weighted survival: mean {sum(d) / len(d):+.3f} [{lo:+.3f}, {hi:+.3f}]; M3 better "
+                     f"on {better}, equal on {equal}, worse on {len(d) - better - equal} of {len(d)} seeds; Wilcoxon p = {pv}.")
         L.append("")
         L += ["| Decision | Asked | Departed from the rules agent's choice |", "|---|---|---|"]
         for kind, label in KINDS.items():

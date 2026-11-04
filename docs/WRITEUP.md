@@ -5,7 +5,6 @@ CSYE7380 20134 Theory & Prac App AI Gen Model SEC 08 Fall 2026 [VTL-1-OL], Profe
 Midterm project, November 4, 2026
 
 **Code:** https://github.com/shreyashyadav1/emergency-response-mas
-**Dashboard recording:** [video link]
 
 ## Summary
 
@@ -20,7 +19,8 @@ To check that the coordination itself helps, I ran every policy on the same 150 
   every stress level (p < 0.001 each), which is 1.2 to 2.0 more expected survivors per scenario.
 - Negotiation alone, compared with the same agents without it (M1), adds 0.025 to 0.039.
 - When the agents' judgment calls are made by OpenAI Agents SDK agents on `gpt-4o-mini` (M3), the system keeps almost
-  all of that: +0.072 over nearest-first dispatch, better on 27 of 30 seeds, and within 0.003 of the rules version.
+  all of that: +0.053 over the best baseline (better on 26 of 30 seeds, p < 0.001), +0.021 over the agents without
+  negotiation, and 0.003 below the rules version.
 
 ## 1. The simulated world
 
@@ -163,8 +163,11 @@ What I take from this:
 - **ER bay use is a little lower with the agents** (0.70 against 0.74), partly because hospitals hold bays back for RED
   patients. That's by design.
 
-**The SDK agents (M3).** Against nearest-first, M3 gains +0.072 [+0.052, +0.093] and is better on 27 of 30 seeds.
-Against the rules agents it's -0.003 [-0.007, -0.000]: equal on 9 seeds, better on 5 and worse on 16. The model departed
+**The SDK agents (M3).** On the same 30 seeds, M3 beats the best baseline (B1) by +0.053 [+0.035, +0.070], better on
+26 of 30 seeds (p = 9e-06), and nearest-first by +0.072 [+0.052, +0.093], better on 27 of 30. It also beats the agents
+without negotiation (M1) by +0.021 [+0.009, +0.034] (p = 0.003), so negotiation still pays off when the model makes the
+judgment calls. Against the rules agents it's -0.003 [-0.007, -0.000] (p = 0.02), a small but real loss: equal on 9
+seeds, better on 5 and worse on 16. The model departed
 from the rules agent's choice on 139 of 2,051 decisions (7%): 17% of hospital orderings, 4% of assessments, 4% of
 counter-or-refuse choices, 2% of contested unit awards and 1 of 34 settlements. No answer failed validation. The
 hospital-order changes don't track the small gap. The largest single loss, seed 13 (-0.047), is also the only seed
@@ -182,7 +185,9 @@ all five panels together:
    side.
 2. **Resource status:** ambulances, teams, ER bays, ICU beds, and doctor and nurse slots as in use, free or unavailable,
    plus a table per hospital.
-3. **Agent activity:** one card per agent with its status, message counts and latest messages.
+3. **Agent activity:** one card per agent with its status, what it's still waiting on (calls not yet confirmed on scene,
+   victims with no ambulance, ambulances inbound or stuck at a door, staff on the way), message counts and its latest
+   messages.
 4. **Negotiation history:** every unit conflict and admission request with its replies, and one negotiation read in
    full.
 5. **Performance:** indicators at the current minute with the difference from the other policy, running totals, the

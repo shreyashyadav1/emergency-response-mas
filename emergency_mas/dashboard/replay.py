@@ -240,9 +240,55 @@ class Replay:
         return pd.DataFrame(rows, columns=["resource", "state", "count"])
 
     # ------------------------------------------------------------------ agents and negotiation
+    def pending(self, t: int, most: int = 4) -> dict[str, list[str]]:
+        """What each agent is still waiting on at minute t: calls not yet confirmed, victims with no ambulance,
+        ambulances inbound or stuck at a door, staff on the way and surge bays opening."""
+        tick = self.tick(t)
+        events = [e for e in self.events if e["t"] <= t]
+
+        def few(items: list[str]) -> str:
+            return ", ".join(items[:most]) + (f" and {len(items) - most} more" if len(items) > most else "")
+
+        out: dict[str, list[str]] = {"incident_assessment": [], "dispatch": [], "resource_allocation": []}
+        unconfirmed = [i["id"] for i in tick["incidents"] if not i["revealed"]]
+        if unconfirmed:
+            out["incident_assessment"].append(f"estimates not yet confirmed on scene: {few(unconfirmed)}")
+        covered = {u["incident"] for u in tick["ambulances"] if u["status"] in TO_INCIDENT}
+        uncovered = []
+        for inc in tick["incidents"]:
+            left = sum((inc["waiting"] or self.triage_counts[inc["id"]]).values())
+            if left and inc["id"] not in covered:
+                uncovered.append(f"{inc['id']} ({left})")
+        if uncovered:
+            out["dispatch"].append(f"victims waiting with no ambulance assigned: {few(uncovered)}")
+        for h in tick["hospitals"]:
+            hid, items = h["id"], []
+            inbound = [u["id"] for u in tick["ambulances"] if u["hospital"] == hid and u["status"] == "to_hospital"]
+            door = [u["id"] for u in tick["ambulances"] if u["hospital"] == hid and u["status"] == "at_door"]
+            if inbound:
+                items.append(f"inbound: {few(inbound)}")
+            if door:
+                items.append(f"at the door with no free bay: {few(door)}")
+            if h["corridor"]:
+                items.append(f"{h['corridor']} handed over in the corridor, waiting for a bay")
+            ready = [e["ready"] for e in events if e["kind"] == "surge_ordered" and e["hospital"] == hid and t < e["ready"]]
+            if ready:
+                items.append(f"surge bays open at minute {min(ready)}")
+            out[f"hospital:{hid}"] = items
+        moving = [f"{e['staff']} from {'the pool' if e['source'] == 'POOL' else e['source']} to {e['hospital']} "
+                  f"(minute {e['arrives']})" for e in events if e["kind"] == "staff_assigned" and t < e["arrives"]]
+        if moving:
+            out["resource_allocation"].append(f"staff on the way: {few(moving)}")
+        stuck = [f"{u['id']} at {u['hospital']}" for u in tick["ambulances"] if u["status"] == "at_door"]
+        if stuck:
+            out["resource_allocation"].append(f"ambulances at full ER doors: {few(stuck)}")
+        return out
+
     def agents(self, t: int, last: int = 3) -> list[dict]:
-        """One card per agent: its status line at minute t, message counts so far and its latest messages."""
+        """One card per agent: its status line at minute t, what it is still waiting on, message counts so far
+        and its latest messages."""
         notes = self.tick(t)["notes"]
+        pending = self.pending(t)
         seen = [m for m in self.messages if m["t"] <= t]
         cards = []
         for agent_id, note in notes.items():
@@ -255,7 +301,8 @@ class Replay:
                                "type": TYPE_LABEL.get(m["type"], m["type"]), "text": message_text(m)})
             cards.append({"id": agent_id, "name": agent_name(agent_id),
                           "job": HOSPITAL_JOB if agent_id.startswith("hospital:") else AGENT_JOBS.get(agent_id, ("", ""))[1],
-                          "status": note.replace("_", " ").replace("->", " to "), "sent": sum(m["sender"] == agent_id for m in mine),
+                          "status": note.replace("_", " ").replace("->", " to "), "pending": pending.get(agent_id, []),
+                          "sent": sum(m["sender"] == agent_id for m in mine),
                           "received": sum(m["recipient"] == agent_id for m in mine), "recent": recent})
         return cards
 

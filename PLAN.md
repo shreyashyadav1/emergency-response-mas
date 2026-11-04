@@ -121,7 +121,7 @@ A play button, step buttons and a minute slider drive every panel at once.
 
 1. **Incident map:** incidents sized by victims still waiting and colored by the worst triage among them, ambulances and teams with lines to where they are headed, hospitals with an ER-bay meter. Optionally both policies' maps side by side.
 2. **Resources:** ambulances, teams, ER bays, ICU beds and doctor and nurse slots as in use, free or unavailable, plus a per-hospital table.
-3. **Agent activity:** one card per agent with its status line, message counts and latest messages.
+3. **Agent activity:** one card per agent with its status line, what it is still waiting on, message counts and latest messages.
 4. **Negotiation history:** every unit conflict and admission request with its replies, followed through `in_reply_to`, and one negotiation read in full.
 5. **Performance:** tiles at the current minute with the difference from the other policy, running totals over the run, the final outcomes side by side, and where the seed ranks among the experiment's 30.
 
