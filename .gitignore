@@ -8,3 +8,4 @@ runs/
 results/*.lock
 results/*.tmp
 slides/
+youtube/
