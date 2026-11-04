@@ -4,6 +4,13 @@ Midterm project, CSYE7380. Four kinds of AI agents coordinate ambulances, respon
 mass-casualty event, and negotiate when their goals conflict. The plan is in [PLAN.md](PLAN.md), the results in
 [docs/RESULTS.md](docs/RESULTS.md), and the LLM agents' (M3) results in [docs/LLM_RESULTS.md](docs/LLM_RESULTS.md).
 
+**Headline results** (weighted survival, paired by seed, 30 seeds per setting):
+
+- The agents with negotiation (M2) beat the best baseline at every stress level, by +0.056 to +0.067 (p < 0.001), and
+  negotiation alone adds +0.025 to +0.039 over the same agents without it (M1).
+- **The OpenAI Agents SDK version (M3, `gpt-4o-mini`) beats both baselines but is slightly worse than M2.** At medium
+  stress it gains +0.053 over B1 and +0.072 over B0, and trails M2 by 0.003 (p = 0.02).
+
 **Status:** data layer, simulator, two baselines, the four agents with negotiation (rules backend), the experiment, the
 dashboard and the OpenAI Agents SDK agents (M3) are done. M3 runs on OpenAI (`gpt-4o-mini`) or on Gemini's free tier.
 

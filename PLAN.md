@@ -107,8 +107,8 @@ negotiation, M2 agents with negotiation. 30 seeds at each stress level, plus ear
   ranks incidents no better than the raw critical count (rank correlation 0.81 for both).
 
 - M3, the same agents with their judgment calls made by `gpt-4o-mini` through the OpenAI Agents SDK (30 seeds at
-  medium stress, Nov 4): -0.003 [-0.007, -0.000] against M2 and +0.072 [+0.052, +0.093] against B0, ahead of B0 on 27
-  of 30 seeds. The model departed from the rules agents on 139 of 2,051 decisions (7%), mostly the order of hospitals
+  medium stress, Nov 4): better than both baselines but slightly worse than M2, at +0.053 [+0.035, +0.070] against B1,
+  +0.072 [+0.052, +0.093] against B0 and -0.003 [-0.007, -0.000] against M2 (p = 0.02). The model departed from the rules agents on 139 of 2,051 decisions (7%), mostly the order of hospitals
   to ask, and no answer failed validation. Details in `docs/LLM_RESULTS.md`.
 
 Still to do: ablations (no assessment, no staff lending, one round).

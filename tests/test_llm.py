@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 import json
+from types import SimpleNamespace
 
-import httpx2
 import pytest
 from agents.items import ModelResponse
 from agents.models.interface import Model
@@ -141,7 +141,8 @@ class RefusingModel(Model):
 
     async def get_response(self, *args, **kwargs):
         self.requests += 1
-        response = httpx2.Response(429, request=httpx2.Request("POST", "https://api.openai.com/v1/chat/completions"))
+        # a stand-in for the HTTP response, so the test does not depend on which HTTP library the client uses
+        response = SimpleNamespace(request=None, status_code=429, headers={})
         raise RateLimitError(self.text, response=response, body=None)
 
     def stream_response(self, *args, **kwargs):
