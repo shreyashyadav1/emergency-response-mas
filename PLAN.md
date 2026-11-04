@@ -154,7 +154,7 @@ never disagree.
 - Repository link and a README with the run commands
 - `docs/ASSUMPTIONS.md`, `docs/DATA_DICTIONARY.md`, `docs/RESULTS.md`
 - Dashboard screenshots or a short screen recording
-- Progress slides
+- Final presentation slides
 
 ## 11. Open questions
 

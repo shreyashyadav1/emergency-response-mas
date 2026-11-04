@@ -103,6 +103,100 @@
     "total": 26,
     "verified": 26
   },
+  "llm": {
+    "decisions": 2051,
+    "departed": 139,
+    "fallbacks": 0,
+    "input_tokens": 2156275,
+    "means": {
+      "B0": {
+        "ambulance_utilization": 0.992,
+        "expected_survivors": 41.022,
+        "mean_first_response_min": 46.88,
+        "ramp_wait_min": 162.9,
+        "red_survivors": 1.082,
+        "unserved_critical_incidents": 4.3,
+        "victims_served": 23.333,
+        "weighted_survival": 0.524
+      },
+      "B1": {
+        "ambulance_utilization": 0.992,
+        "expected_survivors": 41.405,
+        "mean_first_response_min": 47.443,
+        "ramp_wait_min": 89.7,
+        "red_survivors": 1.49,
+        "unserved_critical_incidents": 4.4,
+        "victims_served": 22.1,
+        "weighted_survival": 0.543
+      },
+      "M1": {
+        "ambulance_utilization": 0.981,
+        "expected_survivors": 42.035,
+        "mean_first_response_min": 45.347,
+        "ramp_wait_min": 72.767,
+        "red_survivors": 1.969,
+        "unserved_critical_incidents": 3.267,
+        "victims_served": 27.367,
+        "weighted_survival": 0.574
+      },
+      "M2": {
+        "ambulance_utilization": 0.981,
+        "expected_survivors": 42.746,
+        "mean_first_response_min": 36.033,
+        "ramp_wait_min": 69.633,
+        "red_survivors": 2.269,
+        "unserved_critical_incidents": 2.967,
+        "victims_served": 31.233,
+        "weighted_survival": 0.599
+      },
+      "M3": {
+        "ambulance_utilization": 0.981,
+        "expected_survivors": 42.668,
+        "mean_first_response_min": 35.99,
+        "ramp_wait_min": 68.3,
+        "red_survivors": 2.236,
+        "unserved_critical_incidents": 3.067,
+        "victims_served": 30.667,
+        "weighted_survival": 0.596
+      }
+    },
+    "model": "gpt-4o-mini",
+    "output_tokens": 99032,
+    "requests": 4105,
+    "seeds": 30,
+    "stress": "medium",
+    "theme": "urban_mci",
+    "vs": {
+      "B0": {
+        "better_share": 0.9,
+        "ci_high": 0.093,
+        "ci_low": 0.052,
+        "diff": 0.072,
+        "p": 3.855675458908081e-07
+      },
+      "B1": {
+        "better_share": 0.867,
+        "ci_high": 0.07,
+        "ci_low": 0.035,
+        "diff": 0.053,
+        "p": 9.220093488693237e-06
+      },
+      "M1": {
+        "better_share": 0.7,
+        "ci_high": 0.034,
+        "ci_low": 0.009,
+        "diff": 0.021,
+        "p": 0.0027663204818964005
+      },
+      "M2": {
+        "better_share": 0.167,
+        "ci_high": -0.0,
+        "ci_low": -0.007,
+        "diff": -0.003,
+        "p": 0.019853011421648137
+      }
+    }
+  },
   "results": {
     "assessment": {
       "agent_rank_corr": 0.805,
@@ -736,6 +830,6 @@
       }
     }
   },
-  "tests": 40,
+  "tests": 60,
   "travel_pairs": 174
 }

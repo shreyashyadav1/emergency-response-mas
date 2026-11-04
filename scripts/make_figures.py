@@ -219,6 +219,27 @@ def results_stats(frame: pd.DataFrame) -> dict:
     return out
 
 
+def llm_stats(frame: pd.DataFrame, model: str = "gpt-4o-mini") -> dict:
+    """M3, the agents with their judgment calls made by OpenAI Agents SDK agents, against M2, M1, B1 and B0 on the same seeds."""
+    path = ROOT / "results" / "llm_runs.csv"
+    if not path.exists():
+        return {}
+    llm = pd.read_csv(path)
+    llm = llm[(llm.model == model) & llm["mode"].isin(["live", "cache"])]
+    theme, stress = llm.theme.iloc[0], llm.stress.iloc[0]
+    base = frame[(frame.theme == theme) & (frame.stress == stress) & frame.seed.isin(llm.seed)]
+    both = pd.concat([base, llm.assign(policy="M3")[base.columns.intersection(llm.columns)]], ignore_index=True)
+    kinds = ("assessment", "routing", "counter", "conflict", "settlement")
+    return {"model": model, "theme": theme, "stress": stress, "seeds": int(llm.seed.nunique()),
+            "means": {p: {m: round(float(both[both.policy == p][m].mean()), 3) for m in RESULT_METRICS}
+                      for p in ("B0", "B1", "M1", "M2", "M3")},
+            "vs": {p: _diff(paired(both, "weighted_survival", "M3", p, by=("stress",)).iloc[0]) for p in ("M2", "M1", "B1", "B0")},
+            "decisions": int(llm.llm_decisions.sum()), "fallbacks": int(llm.llm_fallbacks.sum()),
+            "departed": int(sum(llm[f"llm_departed_{k}"].sum() for k in kinds)),
+            "requests": int(llm.llm_requests.sum()), "input_tokens": int(llm.llm_input_tokens.sum()),
+            "output_tokens": int(llm.llm_output_tokens.sum())}
+
+
 def example_thread(theme: str, stress: str, seeds) -> dict:
     """The first admission settled by a staff loan: request, counter-offer, staff search, decisions."""
     for seed in seeds:
@@ -311,6 +332,7 @@ def main() -> None:
     runs = ROOT / "results" / "runs.csv"
     if runs.exists():
         stats["results"] = results_stats(pd.read_csv(runs))
+        stats["llm"] = llm_stats(pd.read_csv(runs))
         stats["example_thread"] = example_thread(theme, stress, [seed, *range(1, 31)])
         stats["showcase_runs"] = {p: {k: run_one(theme, stress, seed, p)[0][k] for k in RESULT_METRICS} for p in ("B0", "M2")}
     (OUT / "deck_stats.json").write_text(json.dumps(stats, indent=2, sort_keys=True) + "\n")

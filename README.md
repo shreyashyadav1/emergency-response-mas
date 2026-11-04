@@ -97,8 +97,8 @@ Each scenario folder in `data/scenarios/` has CSV tables, `scenario.json` and a 
 
 ## Slides
 
-The progress deck (`slides/`) is not in the public repository, because its title slide carries a student ID. Every
-number on it comes from `docs/figures/deck_stats.json`, which this script regenerates:
+The final presentation (`slides/midterm-final.pptx`) is not in the public repository, because its title slide carries a
+student ID. Every number on it comes from `docs/figures/deck_stats.json`, which this script regenerates:
 
 ```bash
 .venv/bin/python scripts/make_figures.py     # scenario map and the numbers quoted on the slides
