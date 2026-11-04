@@ -212,11 +212,12 @@ results tables never disagree.
 
 ```bash
 python3.13 -m venv .venv && .venv/bin/pip install -r requirements-lock.txt
-.venv/bin/python -m pytest                                 # 59 tests
+.venv/bin/python -m pytest                                 # 60 tests
 .venv/bin/python -m emergency_mas.eval run --seeds 30      # the 600 runs, about a minute
 .venv/bin/python -m emergency_mas.eval report              # docs/RESULTS.md
 .venv/bin/streamlit run app/dashboard.py                   # the dashboard
-.venv/bin/python -m emergency_mas.llm run --cache-only --model gpt-4o-mini --seeds $(seq 1 30)   # replays M3, no key
+.venv/bin/python -m emergency_mas.llm run --cache-only --model gpt-4o-mini --seeds $(seq 1 30)
 ```
 
-A live M3 run needs `OPENAI_API_KEY` in `.env`; the README has the details.
+The last command replays the 30 M3 runs from the cached answers, so it needs no key. A live M3 run needs
+`OPENAI_API_KEY` in `.env`; the README has the details.
